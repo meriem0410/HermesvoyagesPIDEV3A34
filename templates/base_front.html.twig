@@ -14,7 +14,7 @@
 
 
     <!-- Facebook and Twitter integration -->
-
+    
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="{{ asset('front_office/favicon.ico') }}">
@@ -50,7 +50,13 @@
 
 <body>
     {% block body %}
-    <div id="fh5co-wrapper">
+    <div id="fh5co-wrapper" style="     background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; z-index: -1;">
         <div id="fh5co-page">
 
             <header id="fh5co-header-section" class="sticky-banner">
@@ -61,14 +67,14 @@
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
-                                <li class="active"><a href="{{ asset('front_office/index.html') }}">Acceuil</a></li>
+                                <li class="active"><a href="{{ path('app_homeFront') }}">Acceuil</a></li>
                                 <li>
                                     <a href="{{ asset('front_office/vacation.html') }}" class="fh5co-sub-ddown">Voyages organisés</a>
                                 
                                 </li>
                                 <li><a href="{{ asset('front_office/flight.html') }}">Transport</a></li>
                                 <li><a href="{{ asset('front_office/hotel.html') }}">Hebergement</a></li>
-                                <li><a href="{{ asset('front_office/car.html') }}">E-tourism</a></li>
+                                <li><a href="{{ path('app_guide_indexFront') }}">E-tourism</a></li>
                                 <li><a href="{{ asset('front_office/blog.html') }}">Evenement</a></li>
                                 
                             </ul>
@@ -77,34 +83,28 @@
                     </div>
                 </div>
             </header>
-            {% block content %} {% endblock %}
-
+            
+{% block content %} {% endblock %} 
             <!-- end:header-top -->
         
-            <div class="fh5co-hero">
-                <div class="fh5co-overlay"></div>
-                <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url({{ asset('front_office/images/cover_bg_1.jpg') }});">
-                    <div class="desc">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-5 col-md-5">
-                                    <div class="tabulation animate-box">
-
-                                    <!-- Nav tabs -->
-                                  
-
-                                    <!-- Tab panes -->
-                                        
-                                                <!-- Rest of the form elements -->
-                                            </div>
-                                        </div>
-                                        <!-- Rest of the tab panes -->
-                                    </div>
-
-                                </div>
-                                <!-- Rest of the content -->
-                            </div>
-                        </div>
+            <div class="fh5co-hero" style="
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; z-index: -1;">
+                <div class="fh5co-overlay"style="
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; z-index: -1;">
+</div>
+               
                     </div>
                 </div>
 

@@ -45,4 +45,13 @@ class ExcursionRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+function GetGuideVideos($IdGuide) :array {
+    return $this->createQueryBuilder('s')
+                ->Where('s.relation = :id')
+                ->setParameter('id',$IdGuide)
+                ->getQuery()
+                ->getResult();
+
+}
 }

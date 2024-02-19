@@ -3,7 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\ExcursionRepository;
+use Doctrine\DBAL\Types\Types;
+use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Mapping as ORM;
+use App\Validator\Constraints as AppAssert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ExcursionRepository::class)]
 class Excursion
@@ -14,13 +18,38 @@ class Excursion
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"entrer titre ")]
+    #[Assert\Length(
+        min: 3,
+        max: 255,
+        minMessage: 'Le titre doit avoir au moins {{ limit }} characters',
+        maxMessage: 'Your first name cannot be longer than {{ limit }} characters',
+    )]
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"entrer Description ")]
+    #[Assert\Length(
+        min: 10,
+        max: 255,
+        minMessage: 'La description doit avoir au moins {{ limit }} characters',
+        maxMessage: 'Your description cannot be longer than {{ limit }} characters',
+    )]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"entrer ville ")]
+    #[Assert\Length(
+        min: 3,
+        max: 255,
+        minMessage: 'Le nom de la ville doit avoir au moins {{ limit }} characters',
+        maxMessage: 'Your ville name cannot be longer than {{ limit }} characters',
+    )]
     private ?string $ville = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $video = null;
+
 
     #[ORM\ManyToOne(inversedBy: 'excursions')]
     #[ORM\JoinColumn(nullable: false)]
@@ -75,6 +104,17 @@ class Excursion
     public function setRelation(?Guide $relation): static
     {
         $this->relation = $relation;
+
+        return $this;
+    }
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(string $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }
