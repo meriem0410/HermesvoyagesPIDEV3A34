@@ -15,12 +15,12 @@
 
     <!-- Facebook and Twitter integration -->
 
-
+{% block stylesheets %}
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="{{ asset('front_office/favicon.ico') }}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-    {% block stylesheets %}
+    
     <!-- Animate.css -->
     <link rel="stylesheet" href="{{ asset('front_office/css/animate.css') }}">
     <!-- Icomoon Icon Fonts-->
@@ -45,7 +45,7 @@
     <!--[if lt IE 9]>
     <script src="{{ asset('front_office/js/respond.min.js') }}"></script>
     <![endif]-->
-    {% endblock %}
+{% endblock %}
 </head>
 
 <body>

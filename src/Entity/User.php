@@ -24,12 +24,12 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $username = null;
 
-    #[ORM\ManyToMany(targetEntity: Hebergement::class, mappedBy: 'relation')]
-    private Collection $hebergements;
+    #[ORM\OneToMany(targetEntity: Reservation::class, mappedBy: 'user')]
+    private Collection $reservations;
 
     public function __construct()
     {
-        $this->hebergements = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -74,27 +74,30 @@ class User
     }
 
     /**
-     * @return Collection<int, Hebergement>
+     * @return Collection<int, Reservation>
      */
-    public function getHebergements(): Collection
+    public function getReservations(): Collection
     {
-        return $this->hebergements;
+        return $this->reservations;
     }
 
-    public function addHebergement(Hebergement $hebergement): static
+    public function addReservation(Reservation $reservation): static
     {
-        if (!$this->hebergements->contains($hebergement)) {
-            $this->hebergements->add($hebergement);
-            $hebergement->addRelation($this);
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeHebergement(Hebergement $hebergement): static
+    public function removeReservation(Reservation $reservation): static
     {
-        if ($this->hebergements->removeElement($hebergement)) {
-            $hebergement->removeRelation($this);
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
+            }
         }
 
         return $this;

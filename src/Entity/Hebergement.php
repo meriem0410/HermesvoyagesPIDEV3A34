@@ -33,16 +33,22 @@ class Hebergement
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $amenitites = null;
+    //#[ORM\Column(length: 255)]
+    //private ?string $amenitites = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'hebergements')]
-    private Collection $relation;
+    #[ORM\Column(type: "json")]
+    private $amenities = ['Wi-Fi' ,'Piscine' , 'Parking'];
+
+    #[ORM\OneToMany(targetEntity: Reservation::class, mappedBy: 'hebergement')]
+    private Collection $reservations;
 
     public function __construct()
     {
-        $this->relation = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
+        $this->amenities = ['Wi-Fi' ,'Piscine' , 'Parking'];
     }
+
+
 
     public function getId(): ?int
     {
@@ -121,39 +127,67 @@ class Hebergement
         return $this;
     }
 
-    public function getAmenitites(): ?string
+    public function getAmenities(): array
     {
-        return $this->amenitites;
+        return $this->amenities ?? [];
     }
 
-    public function setAmenitites(string $amenitites): static
+    public function setAmenities(array $amenities): self
     {
-        $this->amenitites = $amenitites;
+        $this->amenities = $amenities;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getRelation(): Collection
+    // Méthode pour ajouter une commodité individuelle
+    public function addAmenity($amenity): self
     {
-        return $this->relation;
-    }
-
-    public function addRelation(User $relation): static
-    {
-        if (!$this->relation->contains($relation)) {
-            $this->relation->add($relation);
+        if (!in_array($amenity, $this->amenities, true)) {
+            $this->amenities[] = $amenity;
         }
 
         return $this;
     }
 
-    public function removeRelation(User $relation): static
+    // Méthode pour supprimer une commodité
+    public function removeAmenity($amenity): self
     {
-        $this->relation->removeElement($relation);
+        if (false !== $key = array_search($amenity, $this->amenities, true)) {
+            array_splice($this->amenities, $key, 1);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): static
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setHebergement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): static
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getHebergement() === $this) {
+                $reservation->setHebergement(null);
+            }
+        }
 
         return $this;
     }
 }
+   
