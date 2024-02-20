@@ -15,37 +15,47 @@ class Hebergement
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 
+    #[Assert\NotBlank]
+    #[Assert\GreaterThan(5)]
     #[ORM\Column]
     private ?float $prix = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column]
     private ?int $maxguest = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column]
     private ?int $room = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
+    #[Assert\NotBlank]
     //#[ORM\Column(length: 255)]
     //private ?string $amenitites = null;
-
     #[ORM\Column(type: "json")]
-    private $amenities = ['Wi-Fi' ,'Piscine' , 'Parking'];
+    private $amenities = [];
 
     #[ORM\OneToMany(targetEntity: Reservation::class, mappedBy: 'hebergement')]
     private Collection $reservations;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
-        $this->amenities = ['Wi-Fi' ,'Piscine' , 'Parking'];
+        $this->amenities = [];
     }
 
 
@@ -186,6 +196,18 @@ class Hebergement
                 $reservation->setHebergement(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

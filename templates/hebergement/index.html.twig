@@ -12,11 +12,12 @@
                 <th>Id</th>
                 <th>Adresse</th>
                 <th>Type</th>
-                <th>Prix</th>
-                <th>Maxguest</th>
-                <th>Room</th>
+                <th>Prix par nuitée</th>
+                <th>Capacité</th>
+                <th>Nb de chambres</th>
                 <th>Description</th>
                 <th>Amenitites</th>
+                <th>Images</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,7 +27,7 @@
                 <td>{{ hebergement.id }}</td>
                 <td>{{ hebergement.adresse }}</td>
                 <td>{{ hebergement.type }}</td>
-                <td>{{ hebergement.prix }}</td>
+                <td>{{ hebergement.prix }}DT</td>
                 <td>{{ hebergement.maxguest }}</td>
                 <td>{{ hebergement.room }}</td>
                 <td>{{ hebergement.description }}</td>
@@ -36,6 +37,9 @@
                         <li>{{ amenities }}</li>
                     {% endfor %}
                 </ul>
+            </td>
+            <td>
+            <img src ={{ asset ('uploads/' ~hebergement.image)}} width = "50%"/>
             </td>
                 <td>
                     <a href="{{ path('app_hebergement_show', {'id': hebergement.id}) }}">show</a>

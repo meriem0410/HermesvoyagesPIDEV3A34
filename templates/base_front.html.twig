@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %}Hermes Voyage{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -67,7 +67,7 @@
                                 
                                 </li>
                                 <li><a href="{{ asset('front_office/flight.html') }}">Transport</a></li>
-                                <li><a href="{{ asset('front_office/hotel.html') }}">Hebergement</a></li>
+                                <li><a href="{{ asset('front_office/car.html') }}">Hebergement</a></li>
                                 <li><a href="{{ asset('front_office/car.html') }}">E-tourism</a></li>
                                 <li><a href="{{ asset('front_office/blog.html') }}">Evenement</a></li>
                                 
@@ -77,15 +77,17 @@
                     </div>
                 </div>
             </header>
-            {% block content %} {% endblock %}
+            
 
             <!-- end:header-top -->
+            
         
             <div class="fh5co-hero">
                 <div class="fh5co-overlay"></div>
                 <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url({{ asset('front_office/images/cover_bg_1.jpg') }});">
                     <div class="desc">
                         <div class="container">
+                        {% block content %} {% endblock %}
                             <div class="row">
                                 <div class="col-sm-5 col-md-5">
                                     <div class="tabulation animate-box">
@@ -95,9 +97,7 @@
 
                                     <!-- Tab panes -->
                                         
-                                                <!-- Rest of the form elements -->
-                                            </div>
-                                        </div>
+                                         
                                         <!-- Rest of the tab panes -->
                                     </div>
 
@@ -107,9 +107,12 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
+         </div>
+       </div>
+
+
+            
             
  {% endblock %} 
 </body>

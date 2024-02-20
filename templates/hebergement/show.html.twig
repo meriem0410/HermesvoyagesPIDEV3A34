@@ -1,7 +1,7 @@
 {% extends '/base_back.html.twig' %}
 
 {% block title %}Hebergement{% endblock %}
-{% block stylesheets %}Hebergement{% endblock %}
+{% block stylesheets %}{% endblock %}
 
 {% block content %}
     <h1>Hebergement</h1>
@@ -38,7 +38,18 @@
             </tr>
             <tr>
                 <th>Amenitites</th>
-                <td>{{ hebergement.amenitites }}</td>
+                <td>
+                <ul>
+                    {% for amenities in hebergement.amenities %}
+                        <li>{{ amenities }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <tr>
+            <th>images</th>
+             <td>
+            <img src ={{ asset ('uploads/' ~hebergement.image)}} width = "100%"/>
+            </td>
             </tr>
         </tbody>
     </table>

@@ -2,7 +2,7 @@
 
 {% block title %}Reservation index{% endblock %}
 
-{% block stylesheets %} {% endblock %}
+
 
 
 {% block content %}
@@ -15,7 +15,6 @@
                 <th>Checkin</th>
                 <th>Checkout</th>
                 <th>Nbguest</th>
-                <th>RelationU</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,7 +25,6 @@
                 <td>{{ reservation.Checkin ? reservation.Checkin|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.Checkout ? reservation.Checkout|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.nbguest }}</td>
-                <td>{{ reservation.relationU }}</td>
                 <td>
                     <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}">show</a>
                     <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">edit</a>
@@ -37,6 +35,7 @@
                 <td colspan="6">no records found</td>
             </tr>
         {% endfor %}
+         {% block page_contents %}{% endblock %}
         </tbody>
     </table>
 

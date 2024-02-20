@@ -13,7 +13,7 @@ class ArrayToJsonTransformer implements DataTransformerInterface
      *
      * @return mixed String (JSON) representation of the array
      */
-    public function transform(mixed $array) : mixed
+    public function transform(mixed $array ) :mixed
     {
         if (null === $array) {
             return '[]';
@@ -29,7 +29,7 @@ class ArrayToJsonTransformer implements DataTransformerInterface
      *
      * @return mixed Array representation of the JSON
      */
-    public function reverseTransform(mixed $json) : mixed
+    public function reverseTransform(mixed $json ) : mixed
     {
         if (!$json) {
             return [];

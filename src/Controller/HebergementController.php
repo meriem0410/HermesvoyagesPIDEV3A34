@@ -6,6 +6,7 @@ use App\Entity\Hebergement;
 use App\Form\HebergementType;
 use App\Repository\HebergementRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,13 +31,39 @@ class HebergementController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form->get('image')->getData();
+
+            if ($file instanceof UploadedFile) {
+                // L'upload a eu lieu, procédez au traitement du fichier
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                // Vous pouvez également ajouter une logique pour sécuriser $originalFilename ici
+            
+                // Générez un nouveau nom pour le fichier pour éviter les conflits de noms
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$file->guessExtension();
+            
+                // Déplacez le fichier vers le répertoire où les images sont stockées
+                try {
+                    $file->move(
+                        $this->getParameter('uploads_directory'), // Vous devez définir ce paramètre dans services.yaml
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    $this->addFlash('danger', 'Un problème est survenu lors du téléchargement du fichier. Veuillez réessayer.');
+                    // Gérez l'exception si quelque chose se passe mal pendant le déplacement du fichier
+                }
+            
+                // Mettez à jour l'entité avec le nouveau nom de fichier
+                $hebergement->setImage($newFilename);
+            }
             $entityManager->persist($hebergement);
             $entityManager->flush();
         
+        
 
             return $this->redirectToRoute('app_hebergement_index', [], Response::HTTP_SEE_OTHER);
+        
         }
-
+    
         return $this->render('hebergement/new.html.twig', [
             'hebergement' => $hebergement,
             'form' => $form,
