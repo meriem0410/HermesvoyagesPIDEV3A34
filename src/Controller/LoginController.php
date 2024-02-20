@@ -42,12 +42,9 @@ class LoginController extends AbstractController
                 $session->set('id', $user->getId());
                 $session->set('username', $user->getUsername());
                 $session->set('email', $user->getEmail());
+                $session->set('role', $user->getRole());
 
-                if ($user->getRole() == UserRoleEnum::VOYAGEUR) {
-                    return $this->redirectToRoute('app_home');
-                } else {
-                    return $this->redirectToRoute('app_user_index');
-                }
+               
             } else {
                 // Handle invalid login
                 $this->addFlash('error', 'Invalid email or password.');

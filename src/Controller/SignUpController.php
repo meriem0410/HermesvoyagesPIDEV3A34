@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\SignUpType;
-use Doctrine\ORM\EntityManagerInterface; // Import EntityManagerInterface
+use Doctrine\ORM\EntityManagerInterface; 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +14,6 @@ class SignUpController extends AbstractController
 {
     private $entityManager;
 
-    // Inject EntityManagerInterface into the constructor
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
@@ -32,12 +31,11 @@ class SignUpController extends AbstractController
             $newHashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
             $user->setPassword($newHashedPassword);
 
-            // Use EntityManagerInterface to persist and flush
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 
             // Redirect the user after successful sign-up
-            return $this->redirectToRoute('login'); // Change 'app_home' to your home route name
+            return $this->redirectToRoute('login'); 
         }
 
         return $this->render('sign_up/signup.html.twig', [

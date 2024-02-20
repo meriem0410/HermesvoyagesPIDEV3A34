@@ -10,7 +10,18 @@
 {% endblock %}
 
 
+
+
+
+
+
 {% block body %}
+{% if app.session.get('id') is defined and app.session.get('id') is not null %}
+    {{ include('status/index.html.twig') }}
+
+{% else %}
+            
+        
 <br>
 <br>
     <div class="cont">
@@ -47,7 +58,7 @@
     {{ form_row(formSignup.username) }}
     {{ form_row(formSignup.email) }}
     {{ form_row(formSignup.password) }}
-      {{form_widget(formSignup.submit,{'attr':{'class':'submit'}})}}
+    {{form_widget(formSignup.submit,{'attr':{'class':'submit'}})}}
     {{ form_end(formSignup) }}
                 
                
@@ -61,7 +72,7 @@
             document.querySelector('.cont').classList.toggle('s--signup');
         });
     </script>
-
+{% endif %}
 
     
 
