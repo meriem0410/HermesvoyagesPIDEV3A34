@@ -21,12 +21,14 @@ class Voyage extends \App\Entity\Voyage implements \Doctrine\ORM\Proxy\InternalP
         "\0".parent::class."\0".'id' => [parent::class, 'id', null],
         "\0".parent::class."\0".'prix' => [parent::class, 'prix', null],
         "\0".parent::class."\0".'programme' => [parent::class, 'programme', null],
+        "\0".parent::class."\0".'res' => [parent::class, 'res', null],
         "\0".parent::class."\0".'type' => [parent::class, 'type', null],
         'date' => [parent::class, 'date', null],
         'destination' => [parent::class, 'destination', null],
         'id' => [parent::class, 'id', null],
         'prix' => [parent::class, 'prix', null],
         'programme' => [parent::class, 'programme', null],
+        'res' => [parent::class, 'res', null],
         'type' => [parent::class, 'type', null],
     ];
 

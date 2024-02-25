@@ -171,15 +171,31 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
         // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_new");
         echo "\" class=\"btn btn-success\" style=\"background-color: #D0A343; border-color: #D0A343;\">Créer un nouveau voyage</a>
+
+            <!-- Bouton d'impression -->
+            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343; href=\"";
+        // line 56
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_pdf");
+        echo "\"> Imprimer </button>
+        
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <footer class=\"footer\">
     <!-- Contenu du pied de page -->
   </footer>
 </div>
+
+
+<script>
+  document.getElementById('btnPrint').addEventListener('click', function() {
+    window.print();
+  });
+</script> 
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -207,7 +223,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  172 => 53,  168 => 51,  159 => 47,  150 => 43,  146 => 42,  141 => 40,  137 => 39,  133 => 38,  129 => 37,  125 => 36,  122 => 35,  117 => 34,  87 => 6,  80 => 5,  67 => 4,  54 => 3,  37 => 1,);
+        return array (  178 => 56,  172 => 53,  168 => 51,  159 => 47,  150 => 43,  146 => 42,  141 => 40,  137 => 39,  133 => 38,  129 => 37,  125 => 36,  122 => 35,  117 => 34,  87 => 6,  80 => 5,  67 => 4,  54 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -215,7 +231,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
         return new Source("{% extends 'base_back.html.twig' %}
 
 {% block title %}Liste des Voyages{% endblock %}
- {% block sidebar %} {% endblock %} 
+{% block sidebar %} {% endblock %} 
 {% block content %}
 <div class=\"main-panel\">
   <div class=\"content-wrapper\">
@@ -265,17 +281,29 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
               </tbody>
             </table>
             <a href=\"{{ path('app_voyage_new') }}\" class=\"btn btn-success\" style=\"background-color: #D0A343; border-color: #D0A343;\">Créer un nouveau voyage</a>
+
+            <!-- Bouton d'impression -->
+            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343; href=\"{{ path('app_voyage_pdf') }}\"> Imprimer </button>
+        
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <footer class=\"footer\">
     <!-- Contenu du pied de page -->
   </footer>
 </div>
-{% endblock %}
 
+
+<script>
+  document.getElementById('btnPrint').addEventListener('click', function() {
+    window.print();
+  });
+</script> 
+
+{% endblock %}
 ", "voyage/index.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/voyage/index.html.twig");
     }
 }

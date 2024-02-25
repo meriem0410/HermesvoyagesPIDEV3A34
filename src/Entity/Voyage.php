@@ -39,6 +39,10 @@ class Voyage
 
     #[ORM\OneToOne(mappedBy: 'voyage', cascade: ['persist', 'remove'])]
     private ?Programme $programme = null;
+    
+    #[ORM\OneToOne(mappedBy: 'pays')] 
+    private ?Res $res;
+   
 
  
 
@@ -110,6 +114,9 @@ class Voyage
 
         return $this;
     }
+
+   
+    
 
    
 }

@@ -26,11 +26,11 @@ class User
 
     #[ORM\ManyToMany(targetEntity: Hebergement::class, mappedBy: 'relation')]
     private Collection $hebergements;
+   
+    #[ORM\OneToOne(mappedBy: 'user')]
+    private ?Res $res;
 
-    public function __construct()
-    {
-        $this->hebergements = new ArrayCollection();
-    }
+    
 
     public function getId(): ?int
     {
@@ -99,4 +99,7 @@ class User
 
         return $this;
     }
+
+
+   
 }

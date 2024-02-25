@@ -56,7 +56,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "front ";
+        echo "Hermes Voyages ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -139,24 +139,26 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("/voyageorganisé/img/package-" . twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 42)) . ".jpg")), "html", null, true);
             echo "\"  alt=\"\">
                         </div>
-                        <div class=\"d-flex border-bottom\">
-                            <small class=\"flex-fill text-center border-end py-2\"><i class=\"fa fa-map-marker-alt text-primary me-2\"></i>";
+                        <div class=\"d-flex border-bottom\"><small class=\"flex-fill text-center border-end py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #94BDB5;\"><i class=\"fa fa-map-marker-alt text-primary me-2\"></i>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 44), "html", null, true);
+            echo "</small>
+<small class=\"flex-fill text-center border-end py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #4F818C;\"><i class=\"fa fa-calendar-alt text-primary me-2\"></i>";
             // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 45), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 45)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 45), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</small>
-                            <small class=\"flex-fill text-center border-end py-2\"><i class=\"fa fa-calendar-alt text-primary me-2\"></i>";
+<small class=\"flex-fill text-center py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #D0A343;\"><i class=\"fa fa-user text-primary me-2\"></i>";
             // line 46
-            ((twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 46)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 46), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "type", [], "any", false, false, false, 46), "html", null, true);
             echo "</small>
-                            <small class=\"flex-fill text-center py-2\"><i class=\"fa fa-user text-primary me-2\"></i>";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "type", [], "any", false, false, false, 47), "html", null, true);
-            echo "</small>
+
+                           
+                           
                         </div>
                         <div class=\"text-center p-4\">
                             <h3 class=\"mb-0\">";
-            // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "prix", [], "any", false, false, false, 50), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "prix", [], "any", false, false, false, 52), "html", null, true);
             echo "DT</h3>
                             <div class=\"mb-3\">
                                 <small class=\"fa fa-star text-primary\"></small>
@@ -166,12 +168,18 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                                 <small class=\"fa fa-star text-primary\"></small>
                             </div>
                             <p> ";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 58), "html", null, true);
-            echo " Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie. Témoin de siècles d'évolution, ses rues pavées racontent l'histoire fascinante de notre passé, tandis que ses gratte-ciel étincelants symbolisent son avenir prometteur</p>
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 60), "html", null, true);
+            echo " Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.r</p>
                             <div class=\"d-flex justify-content-center mb-2\">
-                                <a href=\"#\"class=\"btn btn-sm btn-primary px-3 border-end\" style=\"border-radius: 30px 0 0 30px;\">Voir plus</a>
-                                <a href=\"#\" class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
+                          <a href=\"";
+            // line 62
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_prog", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 62)]), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-primary px-3 border-end\" style=\"border-radius: 30px 0 0 30px;\">Voir plus</a>
+                                <a href=\"";
+            // line 63
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_new");
+            echo "\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
                             </div>
                         </div>
                     </div>
@@ -181,11 +189,14 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['voyage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
+        // line 69
         echo "
     <!-- Package End -->
 
-
+<a href=\"";
+        // line 72
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_new");
+        echo "\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
     <!-- Booking Start -->
     <div class=\"container-xxl py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
@@ -269,37 +280,37 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
 <script src=\"";
-        // line 153
+        // line 155
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 154
+        // line 156
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 155
+        // line 157
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 156
+        // line 158
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 157
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 158
+        // line 160
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment-timezone.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 159
+        // line 161
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Template Javascript -->
 <script src=\"";
-        // line 162
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -330,14 +341,14 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  303 => 162,  297 => 159,  293 => 158,  289 => 157,  285 => 156,  281 => 155,  277 => 154,  273 => 153,  185 => 67,  170 => 58,  159 => 50,  153 => 47,  149 => 46,  145 => 45,  139 => 42,  133 => 38,  129 => 37,  118 => 29,  112 => 26,  106 => 23,  102 => 22,  98 => 21,  92 => 18,  88 => 17,  77 => 9,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
+        return array (  314 => 164,  308 => 161,  304 => 160,  300 => 159,  296 => 158,  292 => 157,  288 => 156,  284 => 155,  198 => 72,  193 => 69,  181 => 63,  177 => 62,  172 => 60,  161 => 52,  152 => 46,  148 => 45,  144 => 44,  139 => 42,  133 => 38,  129 => 37,  118 => 29,  112 => 26,  106 => 23,  102 => 22,  98 => 21,  92 => 18,  88 => 17,  77 => 9,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base_front.html.twig' %}
 
-{% block title %}front {% endblock %}
+{% block title %}Hermes Voyages {% endblock %}
 
 
 {% block content%}
@@ -378,10 +389,12 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                         <div class=\"overflow-hidden\">
                          <img class=\"img-fluid\" src=\"{{ asset('/voyageorganisé/img/package-' ~ voyage.id ~ '.jpg') }}\"  alt=\"\">
                         </div>
-                        <div class=\"d-flex border-bottom\">
-                            <small class=\"flex-fill text-center border-end py-2\"><i class=\"fa fa-map-marker-alt text-primary me-2\"></i>{{ voyage.destination }}</small>
-                            <small class=\"flex-fill text-center border-end py-2\"><i class=\"fa fa-calendar-alt text-primary me-2\"></i>{{ voyage.date ? voyage.date|date('Y-m-d') : '' }}</small>
-                            <small class=\"flex-fill text-center py-2\"><i class=\"fa fa-user text-primary me-2\"></i>{{ voyage.type }}</small>
+                        <div class=\"d-flex border-bottom\"><small class=\"flex-fill text-center border-end py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #94BDB5;\"><i class=\"fa fa-map-marker-alt text-primary me-2\"></i>{{ voyage.destination }}</small>
+<small class=\"flex-fill text-center border-end py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #4F818C;\"><i class=\"fa fa-calendar-alt text-primary me-2\"></i>{{ voyage.date ? voyage.date|date('Y-m-d') : '' }}</small>
+<small class=\"flex-fill text-center py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #D0A343;\"><i class=\"fa fa-user text-primary me-2\"></i>{{ voyage.type }}</small>
+
+                           
+                           
                         </div>
                         <div class=\"text-center p-4\">
                             <h3 class=\"mb-0\">{{voyage.prix}}DT</h3>
@@ -392,10 +405,10 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                                 <small class=\"fa fa-star text-primary\"></small>
                                 <small class=\"fa fa-star text-primary\"></small>
                             </div>
-                            <p> {{voyage.destination }} Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie. Témoin de siècles d'évolution, ses rues pavées racontent l'histoire fascinante de notre passé, tandis que ses gratte-ciel étincelants symbolisent son avenir prometteur</p>
+                            <p> {{voyage.destination }} Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.r</p>
                             <div class=\"d-flex justify-content-center mb-2\">
-                                <a href=\"#\"class=\"btn btn-sm btn-primary px-3 border-end\" style=\"border-radius: 30px 0 0 30px;\">Voir plus</a>
-                                <a href=\"#\" class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
+                          <a href=\"{{ path('app_prog', {'id': voyage.id} ) }}\" class=\"btn btn-sm btn-primary px-3 border-end\" style=\"border-radius: 30px 0 0 30px;\">Voir plus</a>
+                                <a href=\"{{ path('app_res_new') }}\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
                             </div>
                         </div>
                     </div>
@@ -404,7 +417,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 
     <!-- Package End -->
 
-
+<a href=\"{{ path('app_res_new') }}\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
     <!-- Booking Start -->
     <div class=\"container-xxl py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">

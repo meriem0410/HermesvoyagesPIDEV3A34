@@ -25,9 +25,10 @@ class ProgrammeType extends AbstractType
         $builder
             ->add('activite', ChoiceType::class, [
                 'choices' => [
-                    'Activité 1' => 'Activité 1',
-                    'Activité 2' => 'Activité 2',
-                    'Activité 3' => 'Activité 3',
+                    'sortie en bateau ' => 'sortie en bateau ',
+                    'viste des monuments' => 'viste des monuments',
+                    'sky' => 'sky',
+                   
                     // Ajoutez d'autres options selon vos besoins
                 ],
                 'placeholder' => 'Choisissez une activité',

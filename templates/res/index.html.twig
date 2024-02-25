@@ -1,0 +1,42 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Res index{% endblock %}
+
+{% block content %}
+    <h1>Liste des reservations </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de personnes </th>
+                <th>Origine</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for re in res %}
+            <tr>
+                <td>{{ re.nombre }}</td>
+                <td>{{ re.origine }}</td>
+                <td>{{ re.age }}</td>
+                <td>
+                    <a href="{{ path('app_res_show', {'id': re.id}) }}" class="btn btn-primary">Show</a>
+                    <a href="{{ path('app_res_edit', {'id': re.id}) }}" class="btn btn-secondary">Edit</a>
+                    {% if not re.confirmed %}
+                        <a href="{{ path('confirm_reservation', {'id': re.id}) }}" class="btn btn-success">Confirm</a>
+                    {% else %}
+                        <a href="{{ path('cancel_reservation', {'id': re.id}) }}" class="btn btn-danger">Cancel</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

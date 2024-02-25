@@ -1,7 +1,7 @@
 {% extends 'base_back.html.twig' %}
 
 {% block title %}Liste des Voyages{% endblock %}
- {% block sidebar %} {% endblock %} 
+{% block sidebar %} {% endblock %} 
 {% block content %}
 <div class="main-panel">
   <div class="content-wrapper">
@@ -51,14 +51,26 @@
               </tbody>
             </table>
             <a href="{{ path('app_voyage_new') }}" class="btn btn-success" style="background-color: #D0A343; border-color: #D0A343;">Créer un nouveau voyage</a>
+
+            <!-- Bouton d'impression -->
+            <button id="btnPrint" class="btn btn-primary" style="background-color: #D0A343; border-color: #D0A343; href="{{ path('app_voyage_pdf') }}"> Imprimer </button>
+        
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <footer class="footer">
     <!-- Contenu du pied de page -->
   </footer>
 </div>
-{% endblock %}
 
+
+<script>
+  document.getElementById('btnPrint').addEventListener('click', function() {
+    window.print();
+  });
+</script> 
+
+{% endblock %}

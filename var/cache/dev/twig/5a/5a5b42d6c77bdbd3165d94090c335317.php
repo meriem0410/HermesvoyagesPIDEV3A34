@@ -56,7 +56,7 @@ class __TwigTemplate_eabf3f64cf7c98ef9d357c25d469557d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Programme index";
+        echo "Liste des Programmes";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -90,9 +90,9 @@ class __TwigTemplate_eabf3f64cf7c98ef9d357c25d469557d extends Template
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Activite</th>
-                  <th>Datedepart</th>
-                  <th>Dateretour</th>
+                  <th>Activité</th>
+                  <th>Date de départ</th>
+                  <th>Date de retour</th>
                   <th>Description</th>
                   <th>Actions</th>
                 </tr>
@@ -200,7 +200,7 @@ class __TwigTemplate_eabf3f64cf7c98ef9d357c25d469557d extends Template
     {
         return new Source("{% extends 'base_back.html.twig' %}
 
-{% block title %}Programme index{% endblock %}
+{% block title %}Liste des Programmes{% endblock %}
 
 {% block content %}
 <div class=\"main-panel\">
@@ -223,9 +223,9 @@ class __TwigTemplate_eabf3f64cf7c98ef9d357c25d469557d extends Template
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Activite</th>
-                  <th>Datedepart</th>
-                  <th>Dateretour</th>
+                  <th>Activité</th>
+                  <th>Date de départ</th>
+                  <th>Date de retour</th>
                   <th>Description</th>
                   <th>Actions</th>
                 </tr>

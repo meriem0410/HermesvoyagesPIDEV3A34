@@ -62,7 +62,7 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
 ";
         // line 19
         $this->displayBlock('body', $context, $blocks);
-        // line 234
+        // line 241
         echo " 
   </body>
 
@@ -223,8 +223,18 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_programme_index");
         echo "\"> Liste des programme </a>
                 </li>
+
+
+                <li class=\"nav-item\">
+                
+                  <a class=\"nav-link\" href=\"";
+        // line 94
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_index");
+        echo "\"> Liste des reservations </a>
+                </li>
               </ul>
             </div>
+            
          <li class=\"nav-item\">
             <a class=\"nav-link\" data-toggle=\"collapse\" href=\"#ui-basic\" aria-expanded=\"true\" aria-controls=\"ui-basic\">
               <i class=\"mdi mdi-crosshairs-gps menu-icon\"></i>
@@ -329,9 +339,9 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
               </div>
             </div>
             ";
-        // line 195
+        // line 202
         $this->displayBlock('content', $context, $blocks);
-        // line 198
+        // line 205
         echo "          </div>
           <footer class=\"footer\">
             <footer class=\"footer\">
@@ -352,9 +362,9 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
       </div>
     </div>
      ";
-        // line 217
+        // line 224
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 233
+        // line 240
         echo " 
  ";
         
@@ -375,14 +385,14 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
 
     }
 
-    // line 195
+    // line 202
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 196
+        // line 203
         echo "              <!-- Main Content Goes Here -->
             ";
         
@@ -390,44 +400,44 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
 
     }
 
-    // line 217
+    // line 224
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 218
+        // line 225
         echo "    <!-- Container Scroller -->
     <!-- Plugins:js -->
     <script src=\"";
-        // line 220
+        // line 227
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/vendors/js/vendor.bundle.base.js"), "html", null, true);
         echo "\"></script>
     <!-- Endinject -->
     <!-- Plugin js for this page -->
     <script src=\"";
-        // line 223
+        // line 230
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/vendors/chart.js/Chart.min.js"), "html", null, true);
         echo "\"></script>
     <!-- End plugin js for this page -->
     <!-- Inject:js -->
     <script src=\"";
-        // line 226
+        // line 233
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/off-canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 227
+        // line 234
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/hoverable-collapse.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 228
+        // line 235
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/misc.js"), "html", null, true);
         echo "\"></script>
     <!-- Endinject -->
     <!-- Custom js for this page -->
     <script src=\"";
-        // line 231
+        // line 238
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/dashboard.js"), "html", null, true);
         echo "\"></script>
     <!-- End custom js for this page -->
@@ -450,7 +460,7 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  431 => 231,  425 => 228,  421 => 227,  417 => 226,  411 => 223,  405 => 220,  401 => 218,  394 => 217,  386 => 196,  379 => 195,  366 => 23,  358 => 233,  356 => 217,  335 => 198,  333 => 195,  223 => 88,  216 => 84,  210 => 81,  203 => 77,  175 => 52,  143 => 23,  138 => 20,  131 => 19,  122 => 15,  118 => 14,  114 => 13,  110 => 12,  106 => 11,  102 => 10,  97 => 9,  90 => 8,  77 => 7,  66 => 234,  64 => 19,  60 => 17,  58 => 8,  54 => 7,  46 => 1,);
+        return array (  441 => 238,  435 => 235,  431 => 234,  427 => 233,  421 => 230,  415 => 227,  411 => 225,  404 => 224,  396 => 203,  389 => 202,  376 => 23,  368 => 240,  366 => 224,  345 => 205,  343 => 202,  232 => 94,  223 => 88,  216 => 84,  210 => 81,  203 => 77,  175 => 52,  143 => 23,  138 => 20,  131 => 19,  122 => 15,  118 => 14,  114 => 13,  110 => 12,  106 => 11,  102 => 10,  97 => 9,  90 => 8,  77 => 7,  66 => 241,  64 => 19,  60 => 17,  58 => 8,  54 => 7,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -544,8 +554,15 @@ class __TwigTemplate_df525e54ab306870f33135117a271324 extends Template
                 
                   <a class=\"nav-link\" href=\"{{ path('app_programme_index') }}\"> Liste des programme </a>
                 </li>
+
+
+                <li class=\"nav-item\">
+                
+                  <a class=\"nav-link\" href=\"{{ path('app_res_index') }}\"> Liste des reservations </a>
+                </li>
               </ul>
             </div>
+            
          <li class=\"nav-item\">
             <a class=\"nav-link\" data-toggle=\"collapse\" href=\"#ui-basic\" aria-expanded=\"true\" aria-controls=\"ui-basic\">
               <i class=\"mdi mdi-crosshairs-gps menu-icon\"></i>

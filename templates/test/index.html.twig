@@ -1,6 +1,6 @@
 {% extends 'base_front.html.twig' %}
 
-{% block title %}front {% endblock %}
+{% block title %}Hermes Voyages {% endblock %}
 
 
 {% block content%}
@@ -41,10 +41,12 @@
                         <div class="overflow-hidden">
                          <img class="img-fluid" src="{{ asset('/voyageorganisé/img/package-' ~ voyage.id ~ '.jpg') }}"  alt="">
                         </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ voyage.destination }}</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>{{ voyage.date ? voyage.date|date('Y-m-d') : '' }}</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{ voyage.type }}</small>
+                        <div class="d-flex border-bottom"><small class="flex-fill text-center border-end py-2" style="font-size: 2.2em; font-weight: bold; color: #94BDB5;"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ voyage.destination }}</small>
+<small class="flex-fill text-center border-end py-2" style="font-size: 2.2em; font-weight: bold; color: #4F818C;"><i class="fa fa-calendar-alt text-primary me-2"></i>{{ voyage.date ? voyage.date|date('Y-m-d') : '' }}</small>
+<small class="flex-fill text-center py-2" style="font-size: 2.2em; font-weight: bold; color: #D0A343;"><i class="fa fa-user text-primary me-2"></i>{{ voyage.type }}</small>
+
+                           
+                           
                         </div>
                         <div class="text-center p-4">
                             <h3 class="mb-0">{{voyage.prix}}DT</h3>
@@ -55,10 +57,10 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                             </div>
-                            <p> {{voyage.destination }} Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie. Témoin de siècles d'évolution, ses rues pavées racontent l'histoire fascinante de notre passé, tandis que ses gratte-ciel étincelants symbolisent son avenir prometteur</p>
+                            <p> {{voyage.destination }} Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.r</p>
                             <div class="d-flex justify-content-center mb-2">
-                                <a href="#"class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Voir plus</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Reserver maintenant</a>
+                          <a href="{{ path('app_prog', {'id': voyage.id} ) }}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Voir plus</a>
+                                <a href="{{ path('app_res_new') }}"class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Reserver maintenant</a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,7 @@
 
     <!-- Package End -->
 
-
+<a href="{{ path('app_res_new') }}"class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Reserver maintenant</a>
     <!-- Booking Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
