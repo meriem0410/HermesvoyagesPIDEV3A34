@@ -170,7 +170,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                             <p> ";
             // line 60
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 60), "html", null, true);
-            echo " Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.r</p>
+            echo " Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.</p>
                             <div class=\"d-flex justify-content-center mb-2\">
                           <a href=\"";
             // line 62
@@ -193,66 +193,24 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
         echo "
     <!-- Package End -->
 
-<a href=\"";
-        // line 72
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_new");
-        echo "\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
+
     <!-- Booking Start -->
     <div class=\"container-xxl py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
             <div class=\"booking p-5\">
                 <div class=\"row g-5 align-items-center\">
                     <div class=\"col-md-6 text-white\">
+                    <center>
                         <h6 class=\"text-white text-uppercase\">Suggestion ?</h6>
                         <h1 class=\"text-white mb-4\">Remplisser ce formulaire </h1>
                         <p class=\"mb-4\">Vous ne trouvez pas votre boneur parmis nos suggestion ? Decrivez nous votre voyages de rêve et il sera bientôt disponible ..</p>
-                        <a class=\"btn btn-outline-light py-3 px-5 mt-2\" href=\"\">Créer votre itinéraire</a>
+                        <a class=\"btn btn-outline-light py-3 px-5 mt-2\" href=\"";
+        // line 83
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voypersonalise_new");
+        echo "\">Créer votre itinéraire</a>
+                        </center>
                     </div>
-                    <div class=\"col-md-6\">
-                        <h1 class=\"text-white mb-4\"></h1>
-                        <form>
-                            <div class=\"row g-3\">
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating\">
-                                        <input type=\"text\" class=\"form-control bg-transparent\" id=\"name\" placeholder=\"Your Name\">
-                                        <label for=\"name\">Destination</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating\">
-                                        <input type=\"email\" class=\"form-control bg-transparent\" id=\"email\" placeholder=\"Your Email\">
-                                        <label for=\"email\">Saison</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating date\" id=\"date3\" data-target-input=\"nearest\">
-                                        <input type=\"text\" class=\"form-control bg-transparent datetimepicker-input\" id=\"datetime\" placeholder=\"Date & Time\" data-target=\"#date3\" data-toggle=\"datetimepicker\" />
-                                        <label for=\"datetime\">Date & Time</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating\">
-                                        <select class=\"form-select bg-transparent\" id=\"select1\">
-                                            <option value=\"1\">Email</option>
-                                            <option value=\"2\">Destination 2</option>
-                                            <option value=\"3\">Destination 3</option>
-                                        </select>
-                                        <label for=\"select1\"></label>
-                                    </div>
-                                </div>
-                                <div class=\"col-12\">
-                                    <div class=\"form-floating\">
-                                        <textarea class=\"form-control bg-transparent\" placeholder=\"Special Request\" id=\"message\" style=\"height: 100px\"></textarea>
-                                        <label for=\"message\">Decrivez les activités</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-12\">
-                                    <button class=\"btn btn-outline-light w-100 py-3\" type=\"submit\">Soumettre</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    
             </div>
         </div>
     </div>
@@ -280,37 +238,37 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
 <script src=\"";
-        // line 155
+        // line 113
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 156
+        // line 114
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 157
+        // line 115
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 158
+        // line 116
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 159
+        // line 117
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 160
+        // line 118
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment-timezone.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 161
+        // line 119
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Template Javascript -->
 <script src=\"";
-        // line 164
+        // line 122
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -341,7 +299,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  314 => 164,  308 => 161,  304 => 160,  300 => 159,  296 => 158,  292 => 157,  288 => 156,  284 => 155,  198 => 72,  193 => 69,  181 => 63,  177 => 62,  172 => 60,  161 => 52,  152 => 46,  148 => 45,  144 => 44,  139 => 42,  133 => 38,  129 => 37,  118 => 29,  112 => 26,  106 => 23,  102 => 22,  98 => 21,  92 => 18,  88 => 17,  77 => 9,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
+        return array (  272 => 122,  266 => 119,  262 => 118,  258 => 117,  254 => 116,  250 => 115,  246 => 114,  242 => 113,  209 => 83,  193 => 69,  181 => 63,  177 => 62,  172 => 60,  161 => 52,  152 => 46,  148 => 45,  144 => 44,  139 => 42,  133 => 38,  129 => 37,  118 => 29,  112 => 26,  106 => 23,  102 => 22,  98 => 21,  92 => 18,  88 => 17,  77 => 9,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -405,7 +363,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                                 <small class=\"fa fa-star text-primary\"></small>
                                 <small class=\"fa fa-star text-primary\"></small>
                             </div>
-                            <p> {{voyage.destination }} Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.r</p>
+                            <p> {{voyage.destination }} Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.</p>
                             <div class=\"d-flex justify-content-center mb-2\">
                           <a href=\"{{ path('app_prog', {'id': voyage.id} ) }}\" class=\"btn btn-sm btn-primary px-3 border-end\" style=\"border-radius: 30px 0 0 30px;\">Voir plus</a>
                                 <a href=\"{{ path('app_res_new') }}\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
@@ -417,63 +375,21 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 
     <!-- Package End -->
 
-<a href=\"{{ path('app_res_new') }}\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
+
     <!-- Booking Start -->
     <div class=\"container-xxl py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
             <div class=\"booking p-5\">
                 <div class=\"row g-5 align-items-center\">
                     <div class=\"col-md-6 text-white\">
+                    <center>
                         <h6 class=\"text-white text-uppercase\">Suggestion ?</h6>
                         <h1 class=\"text-white mb-4\">Remplisser ce formulaire </h1>
                         <p class=\"mb-4\">Vous ne trouvez pas votre boneur parmis nos suggestion ? Decrivez nous votre voyages de rêve et il sera bientôt disponible ..</p>
-                        <a class=\"btn btn-outline-light py-3 px-5 mt-2\" href=\"\">Créer votre itinéraire</a>
+                        <a class=\"btn btn-outline-light py-3 px-5 mt-2\" href=\"{{ path('app_voypersonalise_new') }}\">Créer votre itinéraire</a>
+                        </center>
                     </div>
-                    <div class=\"col-md-6\">
-                        <h1 class=\"text-white mb-4\"></h1>
-                        <form>
-                            <div class=\"row g-3\">
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating\">
-                                        <input type=\"text\" class=\"form-control bg-transparent\" id=\"name\" placeholder=\"Your Name\">
-                                        <label for=\"name\">Destination</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating\">
-                                        <input type=\"email\" class=\"form-control bg-transparent\" id=\"email\" placeholder=\"Your Email\">
-                                        <label for=\"email\">Saison</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating date\" id=\"date3\" data-target-input=\"nearest\">
-                                        <input type=\"text\" class=\"form-control bg-transparent datetimepicker-input\" id=\"datetime\" placeholder=\"Date & Time\" data-target=\"#date3\" data-toggle=\"datetimepicker\" />
-                                        <label for=\"datetime\">Date & Time</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-md-6\">
-                                    <div class=\"form-floating\">
-                                        <select class=\"form-select bg-transparent\" id=\"select1\">
-                                            <option value=\"1\">Email</option>
-                                            <option value=\"2\">Destination 2</option>
-                                            <option value=\"3\">Destination 3</option>
-                                        </select>
-                                        <label for=\"select1\"></label>
-                                    </div>
-                                </div>
-                                <div class=\"col-12\">
-                                    <div class=\"form-floating\">
-                                        <textarea class=\"form-control bg-transparent\" placeholder=\"Special Request\" id=\"message\" style=\"height: 100px\"></textarea>
-                                        <label for=\"message\">Decrivez les activités</label>
-                                    </div>
-                                </div>
-                                <div class=\"col-12\">
-                                    <button class=\"btn btn-outline-light w-100 py-3\" type=\"submit\">Soumettre</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    
             </div>
         </div>
     </div>
@@ -511,6 +427,6 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 <!-- Template Javascript -->
 <script src=\"{{ asset('voyageorganisé/js/main.js') }}\"></script>
 
- {% endblock %}", "test/index.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/test/index.html.twig");
+ {% endblock %}", "test/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 2/templates/test/index.html.twig");
     }
 }

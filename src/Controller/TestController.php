@@ -26,6 +26,7 @@ class TestController extends AbstractController
             'voyages' => $voyageRepository->findAll(),
         ]);
     }
+    
 
 
    

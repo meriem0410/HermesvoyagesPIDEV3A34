@@ -84,7 +84,8 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "<div class=\"main-panel\">
+        echo "
+<div class=\"main-panel\">
   <div class=\"content-wrapper\">
     <div class=\"page-header\">
       <h3 class=\"page-title\" style=\"color: #D0A343;\">Liste des voyages</h3>
@@ -99,8 +100,15 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
       <div class=\"col-md-10 grid-margin stretch-card\">
         <div class=\"card\" style=\"border-color: #4F818C;\">
           <div class=\"card-body\">
+            <!-- Champ de recherche -->
+            <div class=\"input-group mb-3\">
+              <input type=\"text\" class=\"form-control\" id=\"search_input\" placeholder=\"Rechercher...\">
+              <div class=\"input-group-append\">
+                <button class=\"btn btn-outline-secondary\" type=\"button\">Rechercher</button>
+              </div>
+            </div>
             <h4 class=\"card-title\" style=\"color: #D0A343;\">Liste des voyages</h4>
-            <table class=\"table\">
+            <table id=\"myTable\" class=\"table\">
               <thead>
                 <tr>
                   <th>Id</th>
@@ -113,41 +121,41 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
               </thead>
               <tbody>
                 ";
-        // line 34
+        // line 42
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["voyages"]) || array_key_exists("voyages", $context) ? $context["voyages"] : (function () { throw new RuntimeError('Variable "voyages" does not exist.', 34, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["voyages"]) || array_key_exists("voyages", $context) ? $context["voyages"] : (function () { throw new RuntimeError('Variable "voyages" does not exist.', 42, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["voyage"]) {
-            // line 35
+            // line 43
             echo "                <tr>
                   <td>";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 36), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 44), "html", null, true);
             echo "</td>
                   <td>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 37), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 45), "html", null, true);
             echo "</td>
                   <td>";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "prix", [], "any", false, false, false, 38), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "prix", [], "any", false, false, false, 46), "html", null, true);
             echo "</td>
                   <td>";
-            // line 39
-            ((twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 39)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 39), "Y-m-d"), "html", null, true))) : (print ("")));
+            // line 47
+            ((twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 47)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "date", [], "any", false, false, false, 47), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                   <td>";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "type", [], "any", false, false, false, 40), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "type", [], "any", false, false, false, 48), "html", null, true);
             echo "</td>
                   <td>
                     <a href=\"";
-            // line 42
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_show", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 42)]), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_show", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 50)]), "html", null, true);
             echo "\" class=\"btn btn-info\" style=\"background-color: #D0A343; border-color: #D0A343;\">Afficher</a>
                     <a href=\"";
-            // line 43
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 43)]), "html", null, true);
+            // line 51
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 51)]), "html", null, true);
             echo "\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\">Modifier</a>
                   </td>
                 </tr>
@@ -155,7 +163,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 47
+            // line 55
             echo "                <tr>
                   <td colspan=\"6\">Aucun enregistrement trouvé</td>
                 </tr>
@@ -164,19 +172,16 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['voyage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 59
         echo "              </tbody>
             </table>
             <a href=\"";
-        // line 53
+        // line 61
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_new");
         echo "\" class=\"btn btn-success\" style=\"background-color: #D0A343; border-color: #D0A343;\">Créer un nouveau voyage</a>
 
             <!-- Bouton d'impression -->
-            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343; href=\"";
-        // line 56
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_pdf");
-        echo "\"> Imprimer </button>
+            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\"> Imprimer </button>
         
           </div>
         </div>
@@ -189,6 +194,8 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
   </footer>
 </div>
 
+<!-- Assurez-vous d'inclure jQuery avant votre script -->
+<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
 
 <script>
   document.getElementById('btnPrint').addEventListener('click', function() {
@@ -196,6 +203,16 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
   });
 </script> 
 
+<script>
+    \$(document).ready(function () {
+        \$(\"#search_input\").on(\"keyup\", function () {
+            var value = \$(this).val().toLowerCase();
+            \$(\"#myTable tbody tr\").filter(function () {
+                \$(this).toggle(\$(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -223,7 +240,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  178 => 56,  172 => 53,  168 => 51,  159 => 47,  150 => 43,  146 => 42,  141 => 40,  137 => 39,  133 => 38,  129 => 37,  125 => 36,  122 => 35,  117 => 34,  87 => 6,  80 => 5,  67 => 4,  54 => 3,  37 => 1,);
+        return array (  180 => 61,  176 => 59,  167 => 55,  158 => 51,  154 => 50,  149 => 48,  145 => 47,  141 => 46,  137 => 45,  133 => 44,  130 => 43,  125 => 42,  87 => 6,  80 => 5,  67 => 4,  54 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -233,6 +250,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
 {% block title %}Liste des Voyages{% endblock %}
 {% block sidebar %} {% endblock %} 
 {% block content %}
+
 <div class=\"main-panel\">
   <div class=\"content-wrapper\">
     <div class=\"page-header\">
@@ -248,8 +266,15 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
       <div class=\"col-md-10 grid-margin stretch-card\">
         <div class=\"card\" style=\"border-color: #4F818C;\">
           <div class=\"card-body\">
+            <!-- Champ de recherche -->
+            <div class=\"input-group mb-3\">
+              <input type=\"text\" class=\"form-control\" id=\"search_input\" placeholder=\"Rechercher...\">
+              <div class=\"input-group-append\">
+                <button class=\"btn btn-outline-secondary\" type=\"button\">Rechercher</button>
+              </div>
+            </div>
             <h4 class=\"card-title\" style=\"color: #D0A343;\">Liste des voyages</h4>
-            <table class=\"table\">
+            <table id=\"myTable\" class=\"table\">
               <thead>
                 <tr>
                   <th>Id</th>
@@ -283,7 +308,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
             <a href=\"{{ path('app_voyage_new') }}\" class=\"btn btn-success\" style=\"background-color: #D0A343; border-color: #D0A343;\">Créer un nouveau voyage</a>
 
             <!-- Bouton d'impression -->
-            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343; href=\"{{ path('app_voyage_pdf') }}\"> Imprimer </button>
+            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\"> Imprimer </button>
         
           </div>
         </div>
@@ -296,6 +321,8 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
   </footer>
 </div>
 
+<!-- Assurez-vous d'inclure jQuery avant votre script -->
+<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
 
 <script>
   document.getElementById('btnPrint').addEventListener('click', function() {
@@ -303,7 +330,17 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
   });
 </script> 
 
+<script>
+    \$(document).ready(function () {
+        \$(\"#search_input\").on(\"keyup\", function () {
+            var value = \$(this).val().toLowerCase();
+            \$(\"#myTable tbody tr\").filter(function () {
+                \$(this).toggle(\$(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 {% endblock %}
-", "voyage/index.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/voyage/index.html.twig");
+", "voyage/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 2/templates/voyage/index.html.twig");
     }
 }

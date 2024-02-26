@@ -26,20 +26,19 @@ class VoyageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('destination', TextType::class, [
+        ->add('destination', TextType::class, [
             'constraints' => [
                 new Assert\NotBlank(['message' => 'Veuillez entrer une destination']),
                 new Assert\Regex([
-                    'pattern' => '/^[a-zA-Z0-9]+$/',
-                    'message' => 'La destination ne doit contenir que des lettres et des chiffres',
+                    'pattern' => '/^[a-zA-Z0-9\s]+$/',
+                    'message' => 'La destination ne doit contenir que des lettres, des chiffres et des espaces',
                 ]),
-                
                 new Assert\Length([
                     'max' => 255,
                     'maxMessage' => 'La destination ne doit pas dépasser {{ limit }} caractères',
                 ]),
             ],
-            ])
+        ])
             ->add('prix', NumberType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Veuillez entrer un prix']),

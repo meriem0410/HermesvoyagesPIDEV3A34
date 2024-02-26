@@ -70,83 +70,126 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "    <h1>Liste des reservations </h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Nombre de personnes </th>
-                <th>Origine</th>
-                <th>Age</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 18
+        echo "<div class=\"main-panel\">
+  <div class=\"content-wrapper\">
+    <div class=\"page-header\">
+      <h3 class=\"page-title\" style=\"color: #D0A343;\">Liste des réservations</h3>
+      <nav aria-label=\"breadcrumb\">
+        <ol class=\"breadcrumb\" style=\"background-color: #94BDB5;\">
+          <li class=\"breadcrumb-item\"><a href=\"#\" style=\"color: #4F818C;\">Réservation</a></li>
+          <li class=\"breadcrumb-item active\" aria-current=\"page\" style=\"color: #4F818C;\">Liste</li>
+        </ol>
+      </nav>
+    </div>
+    <div class=\"row justify-content-center\">
+      <div class=\"col-md-10 grid-margin stretch-card\">
+        <div class=\"card\" style=\"border-color: #4F818C;\">
+          <div class=\"card-body\">
+            <!-- Champ de recherche -->
+            <div class=\"input-group mb-3\">
+              <input type=\"text\" class=\"form-control\" id=\"search_input\" placeholder=\"Rechercher...\">
+              <div class=\"input-group-append\">
+                <button class=\"btn btn-outline-secondary\" type=\"button\">Rechercher</button>
+              </div>
+            </div>
+            <h4 class=\"card-title\" style=\"color: #D0A343;\">Liste des réservations</h4>
+            <table id=\"myTable\" class=\"table\">
+              <thead>
+                <tr>
+                  <th>Nombre de personnes</th>
+                  <th>Origine</th>
+                  <th>Age</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                ";
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["res"]) || array_key_exists("res", $context) ? $context["res"] : (function () { throw new RuntimeError('Variable "res" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["res"]) || array_key_exists("res", $context) ? $context["res"] : (function () { throw new RuntimeError('Variable "res" does not exist.', 39, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["re"]) {
-            // line 19
-            echo "            <tr>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "nombre", [], "any", false, false, false, 20), "html", null, true);
+            // line 40
+            echo "                <tr>
+                  <td>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "nombre", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "origine", [], "any", false, false, false, 21), "html", null, true);
+                  <td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "origine", [], "any", false, false, false, 42), "html", null, true);
             echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "age", [], "any", false, false, false, 22), "html", null, true);
+                  <td>";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "age", [], "any", false, false, false, 43), "html", null, true);
             echo "</td>
-                <td>
+                  <td>
                     <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_show", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\" class=\"btn btn-primary\">Show</a>
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_show", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Afficher</a>
                     <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\" class=\"btn btn-secondary\">Edit</a>
+            // line 46
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 46)]), "html", null, true);
+            echo "\" class=\"btn btn-secondary\">Modifier</a>
                     ";
-            // line 26
-            if ( !twig_get_attribute($this->env, $this->source, $context["re"], "confirmed", [], "any", false, false, false, 26)) {
-                // line 27
-                echo "                        <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("confirm_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-                echo "\" class=\"btn btn-success\">Confirm</a>
+            // line 47
+            if ( !twig_get_attribute($this->env, $this->source, $context["re"], "confirmed", [], "any", false, false, false, 47)) {
+                // line 48
+                echo "                    <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("confirm_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 48)]), "html", null, true);
+                echo "\" class=\"btn btn-success\">Confirmer</a>
                     ";
             } else {
-                // line 29
-                echo "                        <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cancel_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-                echo "\" class=\"btn btn-danger\">Cancel</a>
+                // line 50
+                echo "                    <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cancel_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+                echo "\" class=\"btn btn-danger\">Annuler</a>
                     ";
             }
-            // line 31
-            echo "                </td>
-            </tr>
-        ";
+            // line 52
+            echo "                  </td>
+                </tr>
+                ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 34
-            echo "            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        ";
+            // line 55
+            echo "                <tr>
+                  <td colspan=\"5\">Aucun enregistrement trouvé</td>
+                </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['re'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
-        echo "        </tbody>
-    </table>
+        // line 59
+        echo "              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    
+  <footer class=\"footer\">
+    <!-- Contenu du pied de page -->
+  </footer>
+</div>
+
+<!-- Assurez-vous d'inclure jQuery avant votre script -->
+<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+
+<script>
+  \$(document).ready(function () {
+    \$(\"#search_input\").on(\"keyup\", function () {
+      var value = \$(this).val().toLowerCase();
+      \$(\"#myTable tbody tr\").filter(function () {
+        \$(this).toggle(\$(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -174,7 +217,7 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  146 => 38,  137 => 34,  130 => 31,  124 => 29,  118 => 27,  116 => 26,  112 => 25,  108 => 24,  103 => 22,  99 => 21,  95 => 20,  92 => 19,  87 => 18,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  167 => 59,  158 => 55,  151 => 52,  145 => 50,  139 => 48,  137 => 47,  133 => 46,  129 => 45,  124 => 43,  120 => 42,  116 => 41,  113 => 40,  108 => 39,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,43 +227,86 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
 {% block title %}Res index{% endblock %}
 
 {% block content %}
-    <h1>Liste des reservations </h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Nombre de personnes </th>
-                <th>Origine</th>
-                <th>Age</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for re in res %}
-            <tr>
-                <td>{{ re.nombre }}</td>
-                <td>{{ re.origine }}</td>
-                <td>{{ re.age }}</td>
-                <td>
-                    <a href=\"{{ path('app_res_show', {'id': re.id}) }}\" class=\"btn btn-primary\">Show</a>
-                    <a href=\"{{ path('app_res_edit', {'id': re.id}) }}\" class=\"btn btn-secondary\">Edit</a>
+<div class=\"main-panel\">
+  <div class=\"content-wrapper\">
+    <div class=\"page-header\">
+      <h3 class=\"page-title\" style=\"color: #D0A343;\">Liste des réservations</h3>
+      <nav aria-label=\"breadcrumb\">
+        <ol class=\"breadcrumb\" style=\"background-color: #94BDB5;\">
+          <li class=\"breadcrumb-item\"><a href=\"#\" style=\"color: #4F818C;\">Réservation</a></li>
+          <li class=\"breadcrumb-item active\" aria-current=\"page\" style=\"color: #4F818C;\">Liste</li>
+        </ol>
+      </nav>
+    </div>
+    <div class=\"row justify-content-center\">
+      <div class=\"col-md-10 grid-margin stretch-card\">
+        <div class=\"card\" style=\"border-color: #4F818C;\">
+          <div class=\"card-body\">
+            <!-- Champ de recherche -->
+            <div class=\"input-group mb-3\">
+              <input type=\"text\" class=\"form-control\" id=\"search_input\" placeholder=\"Rechercher...\">
+              <div class=\"input-group-append\">
+                <button class=\"btn btn-outline-secondary\" type=\"button\">Rechercher</button>
+              </div>
+            </div>
+            <h4 class=\"card-title\" style=\"color: #D0A343;\">Liste des réservations</h4>
+            <table id=\"myTable\" class=\"table\">
+              <thead>
+                <tr>
+                  <th>Nombre de personnes</th>
+                  <th>Origine</th>
+                  <th>Age</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for re in res %}
+                <tr>
+                  <td>{{ re.nombre }}</td>
+                  <td>{{ re.origine }}</td>
+                  <td>{{ re.age }}</td>
+                  <td>
+                    <a href=\"{{ path('app_res_show', {'id': re.id}) }}\" class=\"btn btn-primary\">Afficher</a>
+                    <a href=\"{{ path('app_res_edit', {'id': re.id}) }}\" class=\"btn btn-secondary\">Modifier</a>
                     {% if not re.confirmed %}
-                        <a href=\"{{ path('confirm_reservation', {'id': re.id}) }}\" class=\"btn btn-success\">Confirm</a>
+                    <a href=\"{{ path('confirm_reservation', {'id': re.id}) }}\" class=\"btn btn-success\">Confirmer</a>
                     {% else %}
-                        <a href=\"{{ path('cancel_reservation', {'id': re.id}) }}\" class=\"btn btn-danger\">Cancel</a>
+                    <a href=\"{{ path('cancel_reservation', {'id': re.id}) }}\" class=\"btn btn-danger\">Annuler</a>
                     {% endif %}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                  </td>
+                </tr>
+                {% else %}
+                <tr>
+                  <td colspan=\"5\">Aucun enregistrement trouvé</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    
+  <footer class=\"footer\">
+    <!-- Contenu du pied de page -->
+  </footer>
+</div>
+
+<!-- Assurez-vous d'inclure jQuery avant votre script -->
+<script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+
+<script>
+  \$(document).ready(function () {
+    \$(\"#search_input\").on(\"keyup\", function () {
+      var value = \$(this).val().toLowerCase();
+      \$(\"#myTable tbody tr\").filter(function () {
+        \$(this).toggle(\$(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
 {% endblock %}
-", "res/index.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/res/index.html.twig");
+", "res/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 2/templates/res/index.html.twig");
     }
 }
