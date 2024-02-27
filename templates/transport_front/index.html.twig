@@ -1,0 +1,107 @@
+{% extends 'base_front.html.twig' %}
+
+{% block title %}Transport index{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-5">Transport</h1>
+    <style>
+        /* Your existing CSS styles here */
+        .transport-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .transport-card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .transport-card img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .transport-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .transport-card .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .transport-card .card-text {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .transport-card .card-footer {
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .transport-card .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .transport-card .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+    <div class="row">
+        {% if pagination.getTotalItemCount() == 0 %}
+        <div class="row">
+            <div class="col">
+                <p class="text-muted">Aucun enregistrement trouvé</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+        {% for transport in pagination %}
+        <div class="col-md-4 mb-4">
+            <div class="transport-card">
+                <img src="{{ asset('images/aa.png') }}" alt="{{ transport.type }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ transport.type }}</h5>
+                    <p class="card-text">{{ transport.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('app_transport_front_show', {'id': transport.id}) }}" class="btn btn-primary btn-sm btn-block">Find tickets <i class="icon-arrow-right22"></i></a>
+                </div>
+            </div>
+        </div>
+       
+        {% endfor %}
+
+    </div>
+    {% endif %}
+    {# Pagination controls #}
+    <div class="row mt-4">
+        <div class="col">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+    <div class="row mt-4">
+        {{ "<br>"|raw }}
+        <div class="col-md-6">
+            <a href="{{ path('app_tickets_front_index') }}" class="btn btn-primary btn-block btn-lg">Tous les tickets <i class="icon-arrow-right22 ml-2"></i></a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ path('app_transport_front_statistics') }}" class="btn btn-warning btn-block btn-lg">Statistique <i class="icon-arrow-right22 ml-2"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

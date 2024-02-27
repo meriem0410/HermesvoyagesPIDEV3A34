@@ -1,0 +1,43 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Tickets{% endblock %}
+
+{% block content %}
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Ticket Details</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ ticket.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Destination</th>
+                            <td>{{ ticket.destination }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ ticket.prix }}</td>
+                        </tr>
+                        <tr>
+                            <th>Depart</th>
+                            <td>{{ ticket.depart }}</td>
+                        </tr>
+                        <tr>
+                            <th>Arrive</th>
+                            <td>{{ ticket.arrive }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="{{ path('app_tickets_index') }}" class="btn btn-primary">Back to List</a>
+            <a href="{{ path('app_tickets_edit', {'id': ticket.id}) }}" class="btn btn-warning">Edit</a>
+        </div>
+    </div>
+</div>
+
+{{ include('tickets/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Transport{% endblock %}
+
+{% block content %}
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Transport Details</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ transport.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Type</th>
+                            <td>{{ transport.type }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{ transport.description }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="{{ path('app_transport_index') }}" class="btn btn-primary">Back to List</a>
+            <a href="{{ path('app_transport_edit', {'id': transport.id}) }}" class="btn btn-warning">Edit</a>
+        </div>
+    </div>
+</div>
+
+{{ include('transport/_delete_form.html.twig') }}
+{% endblock %}

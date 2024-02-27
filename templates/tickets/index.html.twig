@@ -1,0 +1,55 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Tickets index{% endblock %}
+
+{% block content %}
+<div class="col-lg-8 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Gestion Tickets</h4>
+            <p class="card-description">List of tickets</p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            
+                            <th>Destination</th>
+                            <th>Prix</th>
+                            <th>Depart</th>
+                            <th>Arrive</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if tickets is empty %}
+                            <tr>
+                                <td colspan="6">No records found</td>
+                            </tr>
+                        {% else %}
+                            {% for ticket in tickets %}
+                                <tr>
+                                   
+                                    <td>{{ ticket.destination }}</td>
+                                    <td>{{ ticket.prix }}</td>
+                                    <td>{{ ticket.depart }}</td>
+                                    <td>{{ ticket.arrive }}</td>
+                                    <td>{{ ticket.transport.type }}</td>
+                                    
+                                    <td>
+                                        <a href="{{ path('app_tickets_show', {'id': ticket.id}) }}" class="btn btn-primary btn-sm">Show</a>
+                                        <a href="{{ path('app_tickets_edit', {'id': ticket.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="{{ path('app_tickets_new') }}" class="btn btn-success">Create New</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
