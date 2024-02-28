@@ -70,7 +70,12 @@
                                 <li><a href="{{ asset('front_office/hotel.html') }}">Hebergement</a></li>
                                 <li><a href="{{ asset('front_office/car.html') }}">E-tourism</a></li>
                                 <li><a href="{{ asset('front_office/blog.html') }}">Evenement</a></li>
-                                
+                                {% if app.session.get('id') is defined and app.session.get('id') is not null %}
+
+                                <li><a href="{{path('app_logout')}}">Log Out</a></li>
+                                {% else %} 
+                                <li><a href="{{path('login')}}">Log In</a></li>
+                                {% endif %}
                             </ul>
                         </nav>
 

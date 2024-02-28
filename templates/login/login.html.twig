@@ -31,9 +31,10 @@
         {{ form_row(form.email) }}
         {{ form_row(form.password) }}
              {{form_widget(form.submit,{'attr':{'class':'submit'}})}}
+                     
     {{ form_end(form) }}
             
-            
+            <button type="button" class="submit"  ><a  href="{{path('app_claimEmail')}}">Forget Password</a></button>
          
         </div>
         <div class="sub-cont">

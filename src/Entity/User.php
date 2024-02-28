@@ -29,6 +29,9 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $role = UserRoleEnum::VOYAGEUR;
 
+    #[ORM\Column]
+    private ?bool $Verified = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -82,6 +85,18 @@ class User
         }
 
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function isVerified(): ?bool
+    {
+        return $this->Verified;
+    }
+
+    public function setVerified(bool $Verified): static
+    {
+        $this->Verified = $Verified;
 
         return $this;
     }

@@ -57,7 +57,7 @@ public function new(Request $request, EntityManagerInterface $entityManager, Use
                 $user->setEmail($formData->getEmail());
                 $user->setPassword(password_hash($formData->getPassword(), PASSWORD_DEFAULT));
                 $user->setRole($formData->getRole());
-                
+                //$user->setVerified(1);
                 // Persist the user entity
                 $entityManager->persist($user);
                 $entityManager->flush();
