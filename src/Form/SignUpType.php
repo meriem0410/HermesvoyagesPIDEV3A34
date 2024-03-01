@@ -16,6 +16,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 
 class SignUpType extends AbstractType
 {
@@ -55,6 +57,12 @@ class SignUpType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('captcha', Recaptcha3Type::class, [
+                'constraints' => new Recaptcha3 ([
+                    'message' => 'karser_recaptcha3.message',
+                    'messageMissingValue' => 'karser_recaptcha3.message_missing_value',
+                ]),
+           ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Sign Up',
             ]);
