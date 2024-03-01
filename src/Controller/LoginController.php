@@ -184,7 +184,7 @@ public function verifyCode(Request $request, SessionInterface $session, UserRepo
     
     return $this->render('emails/Verif.html.twig', [
         'VerifFrom' => $form->createView(),
-        'Label' => "Please enter your e-mail"
+        'Label' => "Please enter the verification code sent to your e-mail"
     ]);
 }
 

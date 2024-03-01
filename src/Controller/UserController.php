@@ -12,23 +12,36 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
+use Knp\Component\Pager\PaginatorInterface;
 
 #[Route('/user')]
 class UserController extends AbstractController
 {
-    #[Route('/', name: 'app_user_index', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
+     #[Route('/', name: 'app_user_index', methods: ['GET'])]
+    public function index(UserRepository $userRepository, Request $request, PaginatorInterface $paginator): Response
     {
+        // Get the search term from the request query parameters
+        $searchTerm = $request->query->get('search');
+
+        // If search term is provided, filter users by username or role
+        if ($searchTerm) {
+            $users = $userRepository->findByUsernameOrRole($searchTerm); // Assuming you have a custom query method for search
+        } else {
+            // If no search term provided, fetch all users
+            $users = $userRepository->findAll(); // Assuming you have a custom query method for fetching all users
+        }
+
+        // Paginate the results
+        $pagination = $paginator->paginate(
+            $users, // Query
+            $request->query->getInt('page', 1), // Page number
+            5 // Items per page
+        );
+
+        // Render the template with the paginated users
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
-        ]);
-    }
-    #[Route('/test', name: 'app_user_test', methods: ['GET'])]
-    public function test(UserRepository $userRepository): Response
-    {
-        return $this->render('test.html.twig', [
-            'users' => $userRepository->findAll(),
+            'pagination' => $pagination,
+            'users' => $users,
         ]);
     }
 
@@ -57,7 +70,7 @@ public function new(Request $request, EntityManagerInterface $entityManager, Use
                 $user->setEmail($formData->getEmail());
                 $user->setPassword(password_hash($formData->getPassword(), PASSWORD_DEFAULT));
                 $user->setRole($formData->getRole());
-                //$user->setVerified(1);
+                $user->setVerified(1);
                 // Persist the user entity
                 $entityManager->persist($user);
                 $entityManager->flush();

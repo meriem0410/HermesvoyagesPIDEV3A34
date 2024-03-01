@@ -7,34 +7,88 @@
 
 {% block title %}User index{% endblock %}
 {% block content %}
-<h1>User index</h1>
+    <h1>User index</h1>
+
+    <form action="{{ path('app_user_index') }}" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search" placeholder="Search by username , e-mail or role">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
 
     <table class="table">
-        <td >
-            <tr>
-                <th class="table-warning">Id</th>
-                <th class="table-warning">Email</th>
-                <th class="table-warning">Username</th>
-                <th class="table-warning">Role</th>
-                <th class="table-warning">actions</th>
+        <!-- Table headers -->
+        <thead>
+            <!-- Header row -->
+            <tr class="table-warning">
+                <th>Id</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Actions</th>
             </tr>
-        </td>
+        </thead>
         <tbody>
-        {% for user in users %}
-            <tr  class="table-light">
-                <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.role }}</td>
-                <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
+            <!-- User data rows -->
+            {% for user in pagination %}
+                <tr class="table-light">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        <a href="{{ path('app_user_show', {'id': user.id}) }}" class="btn btn-primary btn-sm">Show</a>
+                    </td>
+                </tr>
+            {% else %}
+                <!-- If no users found -->
+                <tr>
+                    <td colspan="5">No records found</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
+
+    <!-- Pagination controls -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if pagination.currentPageNumber != 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('app_user_index', {'page': 1}) }}" aria-label="First">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                        <span class="sr-only">First</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('app_user_index', {'page': pagination.currentPageNumber - 1}) }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            {% endif %}
+            {% for page in 1..pagination.pageCount %}
+                <li class="page-item {% if page == pagination.currentPageNumber %}active{% endif %}">
+                    <a class="page-link" href="{{ path('app_user_index', {'page': page}) }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+            {% if pagination.currentPageNumber != pagination.pageCount %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('app_user_index', {'page': pagination.currentPageNumber + 1}) }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('app_user_index', {'page': pagination.pageCount}) }}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                        <span class="sr-only">Last</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 {% endblock %}
+
+

@@ -76,6 +76,11 @@
                                 {% else %} 
                                 <li><a href="{{path('login')}}">Log In</a></li>
                                 {% endif %}
+                                {% if app.session.get('role') =='admin' %}
+
+                                <li><a href="{{path('app_user_index')}}">dashboard</a></li>
+                                {% endif %}
+                                
                             </ul>
                         </nav>
 
