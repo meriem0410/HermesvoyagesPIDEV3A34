@@ -55,6 +55,12 @@ class Guide
     #[ORM\OneToMany(targetEntity: Excursion::class, mappedBy: 'relation')]
     private Collection $excursions;
 
+    #[ORM\Column]
+    private ?int $Likes = null;
+
+    #[ORM\Column]
+    private ?int $Dislikes = null;
+
     public function __construct()
     {
         $this->excursions = new ArrayCollection();
@@ -150,6 +156,30 @@ class Guide
                 $excursion->setRelation(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLikes(): ?int
+    {
+        return $this->Likes;
+    }
+
+    public function setLikes(int $Likes): static
+    {
+        $this->Likes = $Likes;
+
+        return $this;
+    }
+
+    public function getDislikes(): ?int
+    {
+        return $this->Dislikes;
+    }
+
+    public function setDislikes(int $Dislikes): static
+    {
+        $this->Dislikes = $Dislikes;
 
         return $this;
     }

@@ -56,8 +56,9 @@ class GuideType extends AbstractType
             ->add('image', FileType::class, [
                 'label' => 'Image',
                 'mapped' => false,
-                'required' => false,
+                'required' => true,
                 'constraints' => [
+                    new Assert\NotBlank(['message' => 'Le numéro de téléphone ne peut pas être vide.']),
                     new \Symfony\Component\Validator\Constraints\File([
                         'mimeTypes' => [
                             'image/jpeg',

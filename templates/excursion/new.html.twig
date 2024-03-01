@@ -18,6 +18,10 @@
                       {{form_label(form.ville)}}
            {{form_widget(form.ville,{'attr':{'class':'form-control'}})}}
            <div class="text-danger">{{ form_errors(form.ville)}}</div>
+           {{form_label(form.latitude)}}
+           {{form_widget(form.latitude,{'attr':{'class':'form-control'}})}}
+           {{form_label(form.longitude)}}
+           {{form_widget(form.longitude,{'attr':{'class':'form-control'}})}}
             {{form_label(form.relation)}}
            {{form_widget(form.relation,{'attr':{'class':'form-control'}})}}
            <div class="text-danger">{{ form_errors(form.relation)}}</div>

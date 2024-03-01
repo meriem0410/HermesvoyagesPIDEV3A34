@@ -56,9 +56,11 @@ class ExcursionType extends AbstractType
                 ]),
             ],
         ])
+        ->add('latitude')
+        ->add('longitude')
             ->add('relation', EntityType::class, [
                 'class' => Guide::class,
-'choice_label' => 'id',
+'choice_label' => 'nom',
             ])
              ->add('video', FileType::class, [
                 'label' => 'Video',
