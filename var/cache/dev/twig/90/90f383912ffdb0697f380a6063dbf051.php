@@ -28,9 +28,7 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
 
         $this->blocks = [
             'page_heading' => [$this, 'block_page_heading'],
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -266,18 +264,131 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
 
 
 
+  
 
 
-";
-        // line 195
-        $this->displayBlock('title', $context, $blocks);
-        // line 196
-        echo "
+
 ";
         // line 197
         $this->displayBlock('body', $context, $blocks);
-        // line 238
+        // line 246
         echo "
+
+
+
+
+
+                                <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\">
+                                </script>
+                                <script>
+                                    \$( document ).ready(function() {
+
+                                        /*begin rechercher avancee multicritéres selon sujet et staus*/
+                                        \$(\"#divs\").keyup(function(e){
+                                            /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                                            var value = \$(\"#search\").val();
+                                            var value2 = \$(\"#search2\").val();
+                                            if(value.length >= 2 || value.length == 0 || value2.length >= 2 || value2.length == 0 )
+                                            {
+                                              
+                                                //    alert(value);
+                                                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                                                \$.ajax({
+                                                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                                                    url : \"";
+        // line 269
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search");
+        echo "\",
+                                                    /* La méthode utilisée pour transférer les données est GET */
+                                                    type : 'GET',
+                                                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                                                    data: {
+                                                        'searchValue' : value,
+                                                        'searchValue2': value2
+                                                    },
+                                                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                                                    success : function(retour){
+                                                        if(retour){
+                                                            \$('#t tbody#search').empty();
+                                                            \$.each(JSON.parse(retour), function(i, obj) {
+                                                                \$('#t tbody#all').hide();
+
+                                                      var imagePath = '/' + obj.image; // Modifiez le chemin si nécessaire
+                                                       var imageHtml = '<img src=\"' + imagePath + '\" alt=\"Evenement Image\" style=\"width: 100px;height:100px\">';
+                                                                \$('#t tbody#search').append('<tr><td> '+obj.id+'  </td><td>    '+obj.titre+'  </td><td>'+obj.description+' </td> <td>'+obj.datedebut+' </td>   <td>'+obj.datefin +' </td> <td>'+obj.lieu+' </td> <td>'+imageHtml+' </td>  <td> <a href=\"/evenement/'+obj.id+'/edit\">edit</a></td></tr>');
+                                                            });
+                                                        }
+                                                        else
+                                                        {
+                                                            \$('#t tbody#all').show();
+                                                            \$('#t tbody#search').empty();
+                                                            \$('#t tbody#search').fadeIn('fast');
+                                                        }
+                                                    },
+                                                });
+                                                return false;
+                                            }
+                                        });
+
+                                    });
+                                    /*end rechercher avancee multicritéres selon sujet et staus*/
+                                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -300,11 +411,7 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
         </div>
       </div>
     </div>
-     ";
-        // line 261
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 277
-        echo " 
+
   </body>
 
 </html>
@@ -329,19 +436,6 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
 
     }
 
-    // line 195
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Liste des evenements";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
     // line 197
     public function block_body($context, array $blocks = [])
     {
@@ -351,7 +445,12 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
 
         // line 198
         echo "
-    <table class=\"table\">
+
+
+ 
+
+
+    <table class=\"table\" id=\"t\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -364,52 +463,52 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
                 <th>actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id=\"all\">
         ";
-        // line 213
+        // line 218
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 213, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 218, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 214
+            // line 219
             echo "            <tr>
                 <td>";
-            // line 215
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 215), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 216
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titre", [], "any", false, false, false, 216), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 217
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "description", [], "any", false, false, false, 217), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 218
-            ((twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 218)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 218), "Y-m-d"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
-            // line 219
-            ((twig_get_attribute($this->env, $this->source, $context["evenement"], "datefin", [], "any", false, false, false, 219)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datefin", [], "any", false, false, false, 219), "Y-m-d"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
             // line 220
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "lieu", [], "any", false, false, false, 220), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 220), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 221
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titre", [], "any", false, false, false, 221), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 222
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "description", [], "any", false, false, false, 222), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 223
+            ((twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 223)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 223), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
+            // line 224
+            ((twig_get_attribute($this->env, $this->source, $context["evenement"], "datefin", [], "any", false, false, false, 224)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datefin", [], "any", false, false, false, 224), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
+            // line 225
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "lieu", [], "any", false, false, false, 225), "html", null, true);
             echo "</td>
                                                     
             <td> <img src=\"";
-            // line 222
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["evenement"], "image", [], "any", false, false, false, 222)), "html", null, true);
+            // line 227
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["evenement"], "image", [], "any", false, false, false, 227)), "html", null, true);
             echo "\" alt=\"\" style=\"width: 100px;height:100px\"> </td>
                 <td>
                     <a class=\"btn btn-success\" href=\"";
-            // line 224
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_evenement_show", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 224)]), "html", null, true);
+            // line 229
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_evenement_show", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 229)]), "html", null, true);
             echo "\">show</a>
                     <a class=\"btn btn-warning\" href=\"";
-            // line 225
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_evenement_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 225)]), "html", null, true);
+            // line 230
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_evenement_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 230)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -417,7 +516,7 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 229
+            // line 234
             echo "            <tr>
                 <td colspan=\"8\">no records found</td>
             </tr>
@@ -426,62 +525,18 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 233
+        // line 238
         echo "        </tbody>
+        
+         <tbody id=\"search\">
+          </tbody>
     </table>
 
     <a class=\"btn btn-primary\" href=\"";
-        // line 236
+        // line 244
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_evenement_new");
         echo "\">Ajouter</a>
 ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    // line 261
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 262
-        echo "    <!-- Container Scroller -->
-    <!-- Plugins:js -->
-    <script src=\"";
-        // line 264
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/vendors/js/vendor.bundle.base.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Endinject -->
-    <!-- Plugin js for this page -->
-    <script src=\"";
-        // line 267
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/vendors/chart.js/Chart.min.js"), "html", null, true);
-        echo "\"></script>
-    <!-- End plugin js for this page -->
-    <!-- Inject:js -->
-    <script src=\"";
-        // line 270
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/off-canvas.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"";
-        // line 271
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/hoverable-collapse.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"";
-        // line 272
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/misc.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Endinject -->
-    <!-- Custom js for this page -->
-    <script src=\"";
-        // line 275
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/dashboard.js"), "html", null, true);
-        echo "\"></script>
-    <!-- End custom js for this page -->
- ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -508,7 +563,7 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  481 => 275,  475 => 272,  471 => 271,  467 => 270,  461 => 267,  455 => 264,  451 => 262,  444 => 261,  435 => 236,  430 => 233,  421 => 229,  412 => 225,  408 => 224,  403 => 222,  398 => 220,  394 => 219,  390 => 218,  386 => 217,  382 => 216,  378 => 215,  375 => 214,  370 => 213,  353 => 198,  346 => 197,  333 => 195,  320 => 19,  307 => 277,  305 => 261,  280 => 238,  278 => 197,  275 => 196,  273 => 195,  180 => 105,  169 => 97,  135 => 66,  85 => 19,  76 => 13,  72 => 12,  68 => 11,  64 => 10,  60 => 9,  56 => 8,  52 => 7,  44 => 1,);
+        return array (  537 => 244,  529 => 238,  520 => 234,  511 => 230,  507 => 229,  502 => 227,  497 => 225,  493 => 224,  489 => 223,  485 => 222,  481 => 221,  477 => 220,  474 => 219,  469 => 218,  447 => 198,  440 => 197,  427 => 19,  300 => 269,  275 => 246,  273 => 197,  178 => 105,  167 => 97,  133 => 66,  83 => 19,  74 => 13,  70 => 12,  66 => 11,  62 => 10,  58 => 9,  54 => 8,  50 => 7,  42 => 1,);
     }
 
     public function getSourceContext()
@@ -705,13 +760,18 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
 
 
 
+  
 
 
-{% block title %}Liste des evenements{% endblock %}
 
 {% block body %}
 
-    <table class=\"table\">
+
+
+ 
+
+
+    <table class=\"table\" id=\"t\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -724,7 +784,7 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
                 <th>actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id=\"all\">
         {% for evenement in evenements %}
             <tr>
                 <td>{{ evenement.id }}</td>
@@ -746,10 +806,126 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
             </tr>
         {% endfor %}
         </tbody>
+        
+         <tbody id=\"search\">
+          </tbody>
     </table>
 
     <a class=\"btn btn-primary\" href=\"{{ path('app_evenement_new') }}\">Ajouter</a>
 {% endblock %}
+
+
+
+
+
+
+                                <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\">
+                                </script>
+                                <script>
+                                    \$( document ).ready(function() {
+
+                                        /*begin rechercher avancee multicritéres selon sujet et staus*/
+                                        \$(\"#divs\").keyup(function(e){
+                                            /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                                            var value = \$(\"#search\").val();
+                                            var value2 = \$(\"#search2\").val();
+                                            if(value.length >= 2 || value.length == 0 || value2.length >= 2 || value2.length == 0 )
+                                            {
+                                              
+                                                //    alert(value);
+                                                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                                                \$.ajax({
+                                                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                                                    url : \"{{ path('search') }}\",
+                                                    /* La méthode utilisée pour transférer les données est GET */
+                                                    type : 'GET',
+                                                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                                                    data: {
+                                                        'searchValue' : value,
+                                                        'searchValue2': value2
+                                                    },
+                                                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                                                    success : function(retour){
+                                                        if(retour){
+                                                            \$('#t tbody#search').empty();
+                                                            \$.each(JSON.parse(retour), function(i, obj) {
+                                                                \$('#t tbody#all').hide();
+
+                                                      var imagePath = '/' + obj.image; // Modifiez le chemin si nécessaire
+                                                       var imageHtml = '<img src=\"' + imagePath + '\" alt=\"Evenement Image\" style=\"width: 100px;height:100px\">';
+                                                                \$('#t tbody#search').append('<tr><td> '+obj.id+'  </td><td>    '+obj.titre+'  </td><td>'+obj.description+' </td> <td>'+obj.datedebut+' </td>   <td>'+obj.datefin +' </td> <td>'+obj.lieu+' </td> <td>'+imageHtml+' </td>  <td> <a href=\"/evenement/'+obj.id+'/edit\">edit</a></td></tr>');
+                                                            });
+                                                        }
+                                                        else
+                                                        {
+                                                            \$('#t tbody#all').show();
+                                                            \$('#t tbody#search').empty();
+                                                            \$('#t tbody#search').fadeIn('fast');
+                                                        }
+                                                    },
+                                                });
+                                                return false;
+                                            }
+                                        });
+
+                                    });
+                                    /*end rechercher avancee multicritéres selon sujet et staus*/
+                                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -773,23 +949,7 @@ class __TwigTemplate_50ccec77383647df06a8e92ea9cc3304 extends Template
         </div>
       </div>
     </div>
-     {% block javascripts %}
-    <!-- Container Scroller -->
-    <!-- Plugins:js -->
-    <script src=\"{{ asset('back_office/assets/vendors/js/vendor.bundle.base.js') }}\"></script>
-    <!-- Endinject -->
-    <!-- Plugin js for this page -->
-    <script src=\"{{ asset('back_office/assets/vendors/chart.js/Chart.min.js') }}\"></script>
-    <!-- End plugin js for this page -->
-    <!-- Inject:js -->
-    <script src=\"{{ asset('back_office/assets/js/off-canvas.js') }}\"></script>
-    <script src=\"{{ asset('back_office/assets/js/hoverable-collapse.js') }}\"></script>
-    <script src=\"{{ asset('back_office/assets/js/misc.js') }}\"></script>
-    <!-- Endinject -->
-    <!-- Custom js for this page -->
-    <script src=\"{{ asset('back_office/assets/js/dashboard.js') }}\"></script>
-    <!-- End custom js for this page -->
- {% endblock %} 
+
   </body>
 
 </html>

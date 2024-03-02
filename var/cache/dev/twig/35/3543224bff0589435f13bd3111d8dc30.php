@@ -28,8 +28,6 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
 
         $this->blocks = [
             'page_heading' => [$this, 'block_page_heading'],
-            'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
     }
@@ -276,104 +274,11 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
 
 
 
-";
-        // line 203
-        $this->displayBlock('title', $context, $blocks);
-        // line 204
-        echo "
-";
-        // line 205
-        $this->displayBlock('body', $context, $blocks);
-        // line 237
-        echo "
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-          <footer class=\"footer\">
-            <footer class=\"footer\">
-  
-  <div class=\"footer-bottom\">
-    <div class=\"container\">
-      <div class=\"row\">
-        <div class=\"col-md-12\">
-          <p class=\"text-center\">&copy; 2024 Hermes Voyage. Tous droits réservés.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-          </footer>
-        </div>
-      </div>
-    </div>
-     ";
-        // line 274
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 290
-        echo " 
-  </body>
-
-</html>
-
-
-";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    // line 19
-    public function block_page_heading($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "page_heading"));
-
-        echo "Bienvenue à Hermes Voyage";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    // line 203
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Liste des billets";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    // line 205
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 206
-        echo "
-    <table class=\"table\">
+    <table class=\"table\" id=\"t\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -382,7 +287,7 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
                 <th>actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id=\"all\">
         ";
         // line 217
         $context['_parent'] = $context;
@@ -429,56 +334,232 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 232
         echo "        </tbody>
+             
+         <tbody id=\"search\">
+          </tbody>
     </table>
 
     <a class=\"btn btn-primary\" href=\"";
-        // line 235
+        // line 238
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_billet_new");
         echo "\">Ajouter</a>
+
+
+
+
+
+
+
+
+
+                                <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\">
+                                </script>
+                                <script>
+                                    \$( document ).ready(function() {
+
+                                        /*begin rechercher avancee multicritéres selon sujet et staus*/
+                                        \$(\"#divs\").keyup(function(e){
+                                            /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                                            var value = \$(\"#search\").val();
+                                            if(value.length >= 2 || value.length == 0 )
+                                            {
+                                              
+                                                //    alert(value);
+                                                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                                                \$.ajax({
+                                                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                                                    url : \"";
+        // line 264
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("searchbillet");
+        echo "\",
+                                                    /* La méthode utilisée pour transférer les données est GET */
+                                                    type : 'GET',
+                                                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                                                    data: {
+                                                        'searchValue' : value,
+                                                    },
+                                                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                                                    success : function(retour){
+                                                        if(retour){
+                                                            \$('#t tbody#search').empty();
+                                                            \$.each(JSON.parse(retour), function(i, obj) {
+                                                                \$('#t tbody#all').hide();
+
+                                                                \$('#t tbody#search').append('<tr><td> '+obj.id+'  </td><td>    '+obj.prix+'  </td><td>'+obj.disponibilite+' </td>  <td> <a href=\"/billet/'+obj.id+'/edit\">edit</a></td></tr>');
+                                                            });
+                                                        }
+                                                        else
+                                                        {
+                                                            \$('#t tbody#all').show();
+                                                            \$('#t tbody#search').empty();
+                                                            \$('#t tbody#search').fadeIn('fast');
+                                                        }
+                                                    },
+                                                });
+                                                return false;
+                                            }
+                                        });
+
+                                    });
+                                    /*end rechercher avancee multicritéres selon sujet et staus*/
+                                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+          <footer class=\"footer\">
+            <footer class=\"footer\">
+  
+  <div class=\"footer-bottom\">
+    <div class=\"container\">
+      <div class=\"row\">
+        <div class=\"col-md-12\">
+          <p class=\"text-center\">&copy; 2024 Hermes Voyage. Tous droits réservés.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+     ";
+        // line 386
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 402
+        echo " 
+  </body>
+
+</html>
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 274
+    // line 19
+    public function block_page_heading($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "page_heading"));
+
+        echo "Bienvenue à Hermes Voyage";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 386
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 275
+        // line 387
         echo "    <!-- Container Scroller -->
     <!-- Plugins:js -->
     <script src=\"";
-        // line 277
+        // line 389
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/vendors/js/vendor.bundle.base.js"), "html", null, true);
         echo "\"></script>
     <!-- Endinject -->
     <!-- Plugin js for this page -->
     <script src=\"";
-        // line 280
+        // line 392
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/vendors/chart.js/Chart.min.js"), "html", null, true);
         echo "\"></script>
     <!-- End plugin js for this page -->
     <!-- Inject:js -->
     <script src=\"";
-        // line 283
+        // line 395
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/off-canvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 284
+        // line 396
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/hoverable-collapse.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 285
+        // line 397
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/misc.js"), "html", null, true);
         echo "\"></script>
     <!-- Endinject -->
     <!-- Custom js for this page -->
     <script src=\"";
-        // line 288
+        // line 400
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("back_office/assets/js/dashboard.js"), "html", null, true);
         echo "\"></script>
     <!-- End custom js for this page -->
@@ -509,7 +590,7 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  482 => 288,  476 => 285,  472 => 284,  468 => 283,  462 => 280,  456 => 277,  452 => 275,  445 => 274,  436 => 235,  431 => 232,  422 => 228,  413 => 224,  409 => 223,  404 => 221,  400 => 220,  396 => 219,  393 => 218,  388 => 217,  375 => 206,  368 => 205,  355 => 203,  342 => 19,  329 => 290,  327 => 274,  288 => 237,  286 => 205,  283 => 204,  281 => 203,  180 => 105,  169 => 97,  135 => 66,  85 => 19,  76 => 13,  72 => 12,  68 => 11,  64 => 10,  60 => 9,  56 => 8,  52 => 7,  44 => 1,);
+        return array (  563 => 400,  557 => 397,  553 => 396,  549 => 395,  543 => 392,  537 => 389,  533 => 387,  526 => 386,  513 => 19,  500 => 402,  498 => 386,  373 => 264,  344 => 238,  336 => 232,  327 => 228,  318 => 224,  314 => 223,  309 => 221,  305 => 220,  301 => 219,  298 => 218,  293 => 217,  178 => 105,  167 => 97,  133 => 66,  83 => 19,  74 => 13,  70 => 12,  66 => 11,  62 => 10,  58 => 9,  54 => 8,  50 => 7,  42 => 1,);
     }
 
     public function getSourceContext()
@@ -716,11 +797,11 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
 
 
 
-{% block title %}Liste des billets{% endblock %}
 
-{% block body %}
 
-    <table class=\"table\">
+
+
+    <table class=\"table\" id=\"t\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -729,7 +810,7 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
                 <th>actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id=\"all\">
         {% for billet in billets %}
             <tr>
                 <td>{{ billet.id }}</td>
@@ -746,10 +827,122 @@ class __TwigTemplate_2d6f03702f0480fb1df238410d6e950c extends Template
             </tr>
         {% endfor %}
         </tbody>
+             
+         <tbody id=\"search\">
+          </tbody>
     </table>
 
     <a class=\"btn btn-primary\" href=\"{{ path('app_billet_new') }}\">Ajouter</a>
-{% endblock %}
+
+
+
+
+
+
+
+
+
+                                <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\">
+                                </script>
+                                <script>
+                                    \$( document ).ready(function() {
+
+                                        /*begin rechercher avancee multicritéres selon sujet et staus*/
+                                        \$(\"#divs\").keyup(function(e){
+                                            /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                                            var value = \$(\"#search\").val();
+                                            if(value.length >= 2 || value.length == 0 )
+                                            {
+                                              
+                                                //    alert(value);
+                                                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                                                \$.ajax({
+                                                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                                                    url : \"{{ path('searchbillet') }}\",
+                                                    /* La méthode utilisée pour transférer les données est GET */
+                                                    type : 'GET',
+                                                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                                                    data: {
+                                                        'searchValue' : value,
+                                                    },
+                                                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                                                    success : function(retour){
+                                                        if(retour){
+                                                            \$('#t tbody#search').empty();
+                                                            \$.each(JSON.parse(retour), function(i, obj) {
+                                                                \$('#t tbody#all').hide();
+
+                                                                \$('#t tbody#search').append('<tr><td> '+obj.id+'  </td><td>    '+obj.prix+'  </td><td>'+obj.disponibilite+' </td>  <td> <a href=\"/billet/'+obj.id+'/edit\">edit</a></td></tr>');
+                                                            });
+                                                        }
+                                                        else
+                                                        {
+                                                            \$('#t tbody#all').show();
+                                                            \$('#t tbody#search').empty();
+                                                            \$('#t tbody#search').fadeIn('fast');
+                                                        }
+                                                    },
+                                                });
+                                                return false;
+                                            }
+                                        });
+
+                                    });
+                                    /*end rechercher avancee multicritéres selon sujet et staus*/
+                                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

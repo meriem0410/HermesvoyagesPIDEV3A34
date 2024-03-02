@@ -141,24 +141,16 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 \t\t\t\t\t<!-- START #fh5co-menu-wrap -->
 \t\t\t\t\t<nav id=\"fh5co-menu-wrap\" role=\"navigation\">
 \t\t\t\t\t\t<ul class=\"sf-menu\" id=\"fh5co-primary-menu\">
-\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"vacation.html\" class=\"fh5co-sub-ddown\">Vacations</a>
-\t\t\t\t\t\t\t\t<ul class=\"fh5co-sub-menu\">
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Family</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">CSS3 &amp; HTML5</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Angular JS</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Node JS</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Django &amp; Python</a></li>
-\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t<a href=\"vacation.html\" class=\"fh5co-sub-ddown\">Voyage organisé</a>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li><a href=\"flight.html\">Flights</a></li>
-\t\t\t\t\t\t\t<li><a href=\"hotel.html\">Hotel</a></li>
-\t\t\t\t\t\t\t<li><a href=\"car.html\">Car</a></li>
-\t\t\t\t\t\t\t<li class=\"active\"><a href=\"blog.html\">evenements</a></li>
-\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>
+\t\t\t\t\t\t\t<li><a href=\"flight.html\">Transport</a></li>
+\t\t\t\t\t\t\t<li><a href=\"hotel.html\">Hebergement</a></li>
+\t\t\t\t\t\t\t<li><a href=\"car.html\">E-tourism</a></li>
+\t\t\t\t\t\t\t<li class=\"active\"><a href=\"blog.html\">Evenements</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 88
+        // line 80
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_evenement_index");
         echo "\">Back Office</a></li>
 \t\t\t\t\t\t</ul>
@@ -180,7 +172,7 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"desc2\">
 \t\t\t\t\t\t\t\t<div class=\"col-sm-7 col-sm-push-1 col-md-7 col-md-push-1\">
-\t\t\t\t\t\t\t\t\t<h2>Nos Evnements</h2>
+\t\t\t\t\t\t\t\t\t<h2>Nos Evènements</h2>
 \t\t\t\t\t\t\t\t\t<!-- <p><a class=\"btn btn-primary btn-lg\" href=\"#\">Get Started</a></p> -->
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -190,80 +182,96 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 \t\t\t</div>
 
 \t\t</div>
-\t\t
-
-\t\t<div id=\"fh5co-blog-section\" class=\"fh5co-section-gray\">
-\t\t\t<div class=\"container\">
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col-md-8 col-md-offset-2 text-center heading-section\">
-\t\t\t\t\t\t<h3>Our Event</h3>
-\t\t\t\t\t\t<p>Vous trouvez ici nos evenement</p>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t
-\t\t\t<div class=\"container\">
-\t\t\t\t<div class=\"row row-bottom-padded-md\">
 
 
 
-\t\t\t\t        ";
-        // line 135
+
+<div id=\"fh5co-blog-section\" class=\"fh5co-section-gray\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-md-8 col-md-offset-2 text-center heading-section\">
+                <h3>Our Event</h3>
+                <p>Vous trouvez ici nos evenement</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class=\"container\">
+        <div class=\"row row-bottom-padded-md\">
+            ";
+        // line 126
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 135, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["evenements"]) || array_key_exists("evenements", $context) ? $context["evenements"] : (function () { throw new RuntimeError('Variable "evenements" does not exist.', 126, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["evenement"]) {
-            // line 136
+            // line 127
+            echo "            <div class=\"col-lg-4 col-md-4 col-sm-6\">
+                <div class=\"fh5co-blog\">
+                    <div class=\"position-relative\">
+                      ";
+            // line 130
+            if ((twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 130), "Y-m-d") < twig_date_format_filter($this->env, "now", "Y-m-d"))) {
+                // line 131
+                echo "                            <small class=\"position-absolute top-0 end-0 bg-success  text-white rounded py-1 px-3 m-2\"> En cours</small>
+\t\t\t\t\t";
+            }
+            // line 133
+            echo "    
+        ";
+            // line 134
+            if ((twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 134), "Y-m-d") > twig_date_format_filter($this->env, "now", "Y-m-d"))) {
+                // line 135
+                echo "                            <small class=\"position-absolute top-0 end-0 bg-danger text-white rounded py-1 px-3 m-2\">Bientot disponible </small>
+\t\t\t\t\t";
+            }
+            // line 137
             echo "
-\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-6\">
-\t\t\t\t\t\t<div class=\"fh5co-blog\">
-\t\t\t\t\t\t\t<a href=\"#\"><img src=\"";
-            // line 139
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["evenement"], "image", [], "any", false, false, false, 139)), "html", null, true);
+\t\t\t\t\t\t<a href=\"#\"><img src=\"";
+            // line 138
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["evenement"], "image", [], "any", false, false, false, 138)), "html", null, true);
             echo "\"></a>
-\t\t\t\t\t\t\t<div class=\"blog-text\">
-\t\t\t\t\t\t\t\t<div class=\"prod-title\">
-\t\t\t\t\t\t\t\t\t<h3><a href=\"#\">Titre: ";
+                    </div>
+                    <div class=\"blog-text\">
+                        <div class=\"prod-title\">
+                            <h3><a href=\"#\">Titre: ";
             // line 142
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "titre", [], "any", false, false, false, 142), "html", null, true);
             echo "</a></h3>
-\t\t\t\t\t\t\t\t\t<span class=\"posted_by\">Date Debut: ";
+                            <span class=\"posted_by\">Date Debut: ";
             // line 143
             ((twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 143)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datedebut", [], "any", false, false, false, 143), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</span>
-\t\t\t\t\t\t\t\t\t<span class=\"posted_by\">Date Fin: ";
+                            <span class=\"posted_by\">Date Fin: ";
             // line 144
             ((twig_get_attribute($this->env, $this->source, $context["evenement"], "datefin", [], "any", false, false, false, 144)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "datefin", [], "any", false, false, false, 144), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</span>
-\t\t\t\t\t\t\t\t\t<span class=\"comment\"><a href=\"\">21<i class=\"icon-bubble2\"></i></a></span>
-\t\t\t\t\t\t\t\t\t<p>";
+                            <span class=\"comment\"><a href=\"\">21<i class=\"icon-bubble2\"></i></a></span>
+                            <p>";
             // line 146
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "description", [], "any", false, false, false, 146), "html", null, true);
             echo "</p>
-\t\t\t\t\t\t\t\t\t<p><a href=\"#\">Lieux: ";
+                            <p><a href=\"#\">Lieux: ";
             // line 147
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["evenement"], "lieu", [], "any", false, false, false, 147), "html", null, true);
             echo "</a></p>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div> 
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-        ";
+                            <div class=\"d-flex justify-content-between\">
+                                <a class=\"btn btn-sm btn-primary rounded py-2 px-4\" href=\"";
+            // line 149
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("eventfrontdetail", ["id" => twig_get_attribute($this->env, $this->source, $context["evenement"], "id", [], "any", false, false, false, 149)]), "html", null, true);
+            echo "\">View Location</a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['evenement'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 153
-        echo "
-
-
-
-
-\t\t\t
-\t\t\t
-\t\t\t\t
-\t\t\t\t
-\t\t\t\t</div>
-\t\t\t</div>
+        // line 156
+        echo "        </div>
+    </div>
+</div>
 
 
 
@@ -396,67 +404,67 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 
 
 \t<script src=\"";
-        // line 295
+        // line 290
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
 \t<!-- jQuery Easing -->
 \t<script src=\"";
-        // line 297
+        // line 292
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/jquery.easing.1.3.js"), "html", null, true);
         echo "\"></script>
 \t<!-- Bootstrap -->
 \t<script src=\"";
-        // line 299
+        // line 294
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 \t<!-- Waypoints -->
 \t<script src=\"";
-        // line 301
+        // line 296
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/jquery.waypoints.min.js"), "html", null, true);
         echo "\"></script>
 \t<script src=\"";
-        // line 302
+        // line 297
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/sticky.js"), "html", null, true);
         echo "\"></script>
 
 \t<!-- Stellar -->
 \t<script src=\"";
-        // line 305
+        // line 300
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/jquery.stellar.min.js"), "html", null, true);
         echo "\"></script>
 \t<!-- Superfish -->
 \t<script src=\"";
-        // line 307
+        // line 302
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/hoverIntent.js"), "html", null, true);
         echo "\"></script>
 \t<script src=\"";
-        // line 308
+        // line 303
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/superfish.js"), "html", null, true);
         echo "\"></script>
 \t<!-- Magnific Popup -->
 \t<script src=\"";
-        // line 310
+        // line 305
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/jquery.magnific-popup.min.js"), "html", null, true);
         echo "\"></script>
 \t<script src=\"";
-        // line 311
+        // line 306
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/magnific-popup-options.js"), "html", null, true);
         echo "\"></script>
 \t<!-- Date Picker -->
 \t<script src=\"";
-        // line 313
+        // line 308
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
 \t<!-- CS Select -->
 \t<script src=\"";
-        // line 315
+        // line 310
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/classie.js"), "html", null, true);
         echo "\"></script>
 \t<script src=\"js/selectFx.js\"></script>
 \t
 \t<!-- Main JS -->
 \t<script src=\"";
-        // line 319
+        // line 314
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front_office/js/main.js"), "html", null, true);
         echo "\"></script>
 
@@ -490,7 +498,7 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  460 => 319,  453 => 315,  448 => 313,  443 => 311,  439 => 310,  434 => 308,  430 => 307,  425 => 305,  419 => 302,  415 => 301,  410 => 299,  405 => 297,  400 => 295,  256 => 153,  244 => 147,  240 => 146,  235 => 144,  231 => 143,  227 => 142,  221 => 139,  216 => 136,  212 => 135,  162 => 88,  124 => 53,  117 => 49,  112 => 47,  108 => 46,  103 => 44,  98 => 42,  93 => 40,  88 => 38,  83 => 36,  78 => 34,  70 => 29,  40 => 1,);
+        return array (  468 => 314,  461 => 310,  456 => 308,  451 => 306,  447 => 305,  442 => 303,  438 => 302,  433 => 300,  427 => 297,  423 => 296,  418 => 294,  413 => 292,  408 => 290,  272 => 156,  259 => 149,  254 => 147,  250 => 146,  245 => 144,  241 => 143,  237 => 142,  230 => 138,  227 => 137,  223 => 135,  221 => 134,  218 => 133,  214 => 131,  212 => 130,  207 => 127,  203 => 126,  154 => 80,  124 => 53,  117 => 49,  112 => 47,  108 => 46,  103 => 44,  98 => 42,  93 => 40,  88 => 38,  83 => 36,  78 => 34,  70 => 29,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -566,22 +574,14 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 \t\t\t\t\t<!-- START #fh5co-menu-wrap -->
 \t\t\t\t\t<nav id=\"fh5co-menu-wrap\" role=\"navigation\">
 \t\t\t\t\t\t<ul class=\"sf-menu\" id=\"fh5co-primary-menu\">
-\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"vacation.html\" class=\"fh5co-sub-ddown\">Vacations</a>
-\t\t\t\t\t\t\t\t<ul class=\"fh5co-sub-menu\">
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Family</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">CSS3 &amp; HTML5</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Angular JS</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Node JS</a></li>
-\t\t\t\t\t\t\t\t\t<li><a href=\"#\">Django &amp; Python</a></li>
-\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t<a href=\"vacation.html\" class=\"fh5co-sub-ddown\">Voyage organisé</a>
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li><a href=\"flight.html\">Flights</a></li>
-\t\t\t\t\t\t\t<li><a href=\"hotel.html\">Hotel</a></li>
-\t\t\t\t\t\t\t<li><a href=\"car.html\">Car</a></li>
-\t\t\t\t\t\t\t<li class=\"active\"><a href=\"blog.html\">evenements</a></li>
-\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>
+\t\t\t\t\t\t\t<li><a href=\"flight.html\">Transport</a></li>
+\t\t\t\t\t\t\t<li><a href=\"hotel.html\">Hebergement</a></li>
+\t\t\t\t\t\t\t<li><a href=\"car.html\">E-tourism</a></li>
+\t\t\t\t\t\t\t<li class=\"active\"><a href=\"blog.html\">Evenements</a></li>
 \t\t\t\t\t\t\t<li><a href=\"{{ path('app_evenement_index') }}\">Back Office</a></li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</nav>
@@ -602,7 +602,7 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"desc2\">
 \t\t\t\t\t\t\t\t<div class=\"col-sm-7 col-sm-push-1 col-md-7 col-md-push-1\">
-\t\t\t\t\t\t\t\t\t<h2>Nos Evnements</h2>
+\t\t\t\t\t\t\t\t\t<h2>Nos Evènements</h2>
 \t\t\t\t\t\t\t\t\t<!-- <p><a class=\"btn btn-primary btn-lg\" href=\"#\">Get Started</a></p> -->
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
@@ -612,52 +612,55 @@ class __TwigTemplate_f338d5a249427befdb1a78b1b0db5702 extends Template
 \t\t\t</div>
 
 \t\t</div>
-\t\t
-
-\t\t<div id=\"fh5co-blog-section\" class=\"fh5co-section-gray\">
-\t\t\t<div class=\"container\">
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col-md-8 col-md-offset-2 text-center heading-section\">
-\t\t\t\t\t\t<h3>Our Event</h3>
-\t\t\t\t\t\t<p>Vous trouvez ici nos evenement</p>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t
-\t\t\t<div class=\"container\">
-\t\t\t\t<div class=\"row row-bottom-padded-md\">
-
-
-
-\t\t\t\t        {% for evenement in evenements %}
-
-\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-6\">
-\t\t\t\t\t\t<div class=\"fh5co-blog\">
-\t\t\t\t\t\t\t<a href=\"#\"><img src=\"{{ asset(evenement.image) }}\"></a>
-\t\t\t\t\t\t\t<div class=\"blog-text\">
-\t\t\t\t\t\t\t\t<div class=\"prod-title\">
-\t\t\t\t\t\t\t\t\t<h3><a href=\"#\">Titre: {{ evenement.titre }}</a></h3>
-\t\t\t\t\t\t\t\t\t<span class=\"posted_by\">Date Debut: {{ evenement.datedebut ? evenement.datedebut|date('Y-m-d') : '' }}</span>
-\t\t\t\t\t\t\t\t\t<span class=\"posted_by\">Date Fin: {{ evenement.datefin ? evenement.datefin|date('Y-m-d') : '' }}</span>
-\t\t\t\t\t\t\t\t\t<span class=\"comment\"><a href=\"\">21<i class=\"icon-bubble2\"></i></a></span>
-\t\t\t\t\t\t\t\t\t<p>{{evenement.description}}</p>
-\t\t\t\t\t\t\t\t\t<p><a href=\"#\">Lieux: {{ evenement.lieu }}</a></p>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div> 
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-        {% endfor %}
 
 
 
 
+<div id=\"fh5co-blog-section\" class=\"fh5co-section-gray\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-md-8 col-md-offset-2 text-center heading-section\">
+                <h3>Our Event</h3>
+                <p>Vous trouvez ici nos evenement</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class=\"container\">
+        <div class=\"row row-bottom-padded-md\">
+            {% for evenement in evenements %}
+            <div class=\"col-lg-4 col-md-4 col-sm-6\">
+                <div class=\"fh5co-blog\">
+                    <div class=\"position-relative\">
+                      {% if evenement.datedebut|date('Y-m-d') < 'now'|date('Y-m-d') %}
+                            <small class=\"position-absolute top-0 end-0 bg-success  text-white rounded py-1 px-3 m-2\"> En cours</small>
+\t\t\t\t\t{% endif %}
+    
+        {% if evenement.datedebut|date('Y-m-d') > 'now'|date('Y-m-d') %}
+                            <small class=\"position-absolute top-0 end-0 bg-danger text-white rounded py-1 px-3 m-2\">Bientot disponible </small>
+\t\t\t\t\t{% endif %}
 
-\t\t\t
-\t\t\t
-\t\t\t\t
-\t\t\t\t
-\t\t\t\t</div>
-\t\t\t</div>
+\t\t\t\t\t\t<a href=\"#\"><img src=\"{{ asset(evenement.image) }}\"></a>
+                    </div>
+                    <div class=\"blog-text\">
+                        <div class=\"prod-title\">
+                            <h3><a href=\"#\">Titre: {{ evenement.titre }}</a></h3>
+                            <span class=\"posted_by\">Date Debut: {{ evenement.datedebut ? evenement.datedebut|date('Y-m-d') : '' }}</span>
+                            <span class=\"posted_by\">Date Fin: {{ evenement.datefin ? evenement.datefin|date('Y-m-d') : '' }}</span>
+                            <span class=\"comment\"><a href=\"\">21<i class=\"icon-bubble2\"></i></a></span>
+                            <p>{{evenement.description}}</p>
+                            <p><a href=\"#\">Lieux: {{ evenement.lieu }}</a></p>
+                            <div class=\"d-flex justify-content-between\">
+                                <a class=\"btn btn-sm btn-primary rounded py-2 px-4\" href=\"{{ path('eventfrontdetail', {'id': evenement.id}) }}\">View Location</a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 
 

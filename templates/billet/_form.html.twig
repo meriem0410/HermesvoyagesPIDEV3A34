@@ -1,0 +1,39 @@
+<style>
+    .form-error {
+        color:red;
+    }
+    Cod
+
+</style>
+
+
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
+
+
+
+        <div class="form-group">
+            <label class="bmd-label-floating">    {{ form_label(form.prix) }}
+            </label>
+            <input type="number" class="form-control" {{ form_widget(form.prix) }}
+            <div class="form-error">
+                {{ form_errors(form.prix) }}
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label class="bmd-label-floating">    {{ form_label(form.disponibilite) }}
+            </label>
+            <input type="checkbox" {{ form_widget(form.disponibilite) }}
+            <div class="form-error">
+                {{ form_errors(form.disponibilite) }}
+            </div>
+        </div>
+
+
+
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
