@@ -41,7 +41,8 @@ class Voyage
     private ?Programme $programme = null;
     
     #[ORM\OneToOne(mappedBy: 'pays')] 
-    private ?Res $res;
+    private ?Res $res; 
+
    
 
  
@@ -115,6 +116,7 @@ class Voyage
         return $this;
     }
 
+   
    
     
 

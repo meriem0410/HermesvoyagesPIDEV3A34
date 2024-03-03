@@ -15,7 +15,7 @@ class Res
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\OneToOne(targetEntity: Voyage::class, cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(targetEntity: Voyage::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?Voyage $pays = null;
     #[ORM\Column]
@@ -32,7 +32,10 @@ class Res
     private ?User $user = null;
 
     #[ORM\Column(type:'boolean')]
-    private bool $confirmed = false; // Nouvelle propriété pour le statut de confirmation
+    private bool $confirmed = false;
+
+    #[ORM\Column(length: 255)]
+    private ?string $mail = null; // Nouvelle propriété pour le statut de confirmation
 
   
 
@@ -108,6 +111,18 @@ class Res
     public function setConfirmed(bool $confirmed): static // Méthode pour définir le statut de confirmation
     {
         $this->confirmed = $confirmed;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(string $mail): static
+    {
+        $this->mail = $mail;
 
         return $this;
     }

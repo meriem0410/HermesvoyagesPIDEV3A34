@@ -82,6 +82,6 @@ class __TwigTemplate_03bd98b19f10cfc61eddb31a37cfa968 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ voypersonalise.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "voypersonalise/_delete_form.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 2/templates/voypersonalise/_delete_form.html.twig");
+", "voypersonalise/_delete_form.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/voypersonalise/_delete_form.html.twig");
     }
 }

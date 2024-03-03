@@ -730,6 +730,6 @@ class __TwigTemplate_6897ba02d87b86cd13cbe7103363604b extends Template
 <!-- Template Javascript -->
 <script src=\"{{ asset('/voyageorganisé/js/main.js') }}\"></script>
 
-{% endblock %}", "package.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/package.html.twig");
+{% endblock %}", "package.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/package.html.twig");
     }
 }

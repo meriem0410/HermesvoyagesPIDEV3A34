@@ -4,12 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Res;
 use App\Form\ResType;
+use Twilio\Rest\Client;
 use App\Repository\ResRepository;
+
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/res')]
 class ResController extends AbstractController
@@ -32,6 +35,16 @@ class ResController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($re);
             $entityManager->flush();
+            $sid = 'ACe3905814aab6299fa907846ad90ebf3b';
+            $token = '626a60afed548e6998f8c25cef577420';
+            $client = new Client($sid, $token);
+            $message = $client->messages->create(
+                "+21653566118", 
+                [
+                   'from' => '+16264363393', 
+                    'body' => "Une nouvelle demande a était envoyé"  
+                ]
+            );
 
             return $this->redirectToRoute('app_res_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -83,6 +96,11 @@ class ResController extends AbstractController
     {
         $res->setConfirmed(true);
         $entityManager->flush();
+    
+      
+        // Retourner une réponse, rediriger, ou effectuer toute autre action nécessaire...
+
+       
 
         
         return $this->redirectToRoute('app_res_index');

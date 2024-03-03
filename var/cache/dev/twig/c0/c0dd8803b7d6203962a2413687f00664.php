@@ -53,7 +53,7 @@ class __TwigTemplate_f05171b2546efe78095c498398bd5eeb extends Template
         ";
         // line 14
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["voyages"]) || array_key_exists("voyages", $context) ? $context["voyages"] : (function () { throw new RuntimeError('Variable "voyages" does not exist.', 14, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable($context["voyage"]);
         foreach ($context['_seq'] as $context["_key"] => $context["voyage"]) {
             // line 15
             echo "            <tr>
@@ -131,7 +131,7 @@ class __TwigTemplate_f05171b2546efe78095c498398bd5eeb extends Template
         </tr>
     </thead>
     <tbody>
-        {% for voyage in voyages %}
+        {% for voyage in voyage %}
             <tr>
                 <td>{{ voyage.id }}</td>
                 <td>{{ voyage.destination }}</td>
@@ -142,6 +142,6 @@ class __TwigTemplate_f05171b2546efe78095c498398bd5eeb extends Template
         {% endfor %}
     </tbody>
 </table>
-", "voyage/pdf.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/voyage/pdf.html.twig");
+", "voyage/pdf.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/voyage/pdf.html.twig");
     }
 }

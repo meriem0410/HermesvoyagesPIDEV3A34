@@ -181,7 +181,10 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
         echo "\" class=\"btn btn-success\" style=\"background-color: #D0A343; border-color: #D0A343;\">Créer un nouveau voyage</a>
 
             <!-- Bouton d'impression -->
-            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\"> Imprimer </button>
+            <a id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\" href=\"";
+        // line 64
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voyage_pdf");
+        echo "\"> Imprimer </a>
         
           </div>
         </div>
@@ -197,11 +200,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
 <!-- Assurez-vous d'inclure jQuery avant votre script -->
 <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
 
-<script>
-  document.getElementById('btnPrint').addEventListener('click', function() {
-    window.print();
-  });
-</script> 
+
 
 <script>
     \$(document).ready(function () {
@@ -240,7 +239,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  180 => 61,  176 => 59,  167 => 55,  158 => 51,  154 => 50,  149 => 48,  145 => 47,  141 => 46,  137 => 45,  133 => 44,  130 => 43,  125 => 42,  87 => 6,  80 => 5,  67 => 4,  54 => 3,  37 => 1,);
+        return array (  186 => 64,  180 => 61,  176 => 59,  167 => 55,  158 => 51,  154 => 50,  149 => 48,  145 => 47,  141 => 46,  137 => 45,  133 => 44,  130 => 43,  125 => 42,  87 => 6,  80 => 5,  67 => 4,  54 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -308,7 +307,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
             <a href=\"{{ path('app_voyage_new') }}\" class=\"btn btn-success\" style=\"background-color: #D0A343; border-color: #D0A343;\">Créer un nouveau voyage</a>
 
             <!-- Bouton d'impression -->
-            <button id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\"> Imprimer </button>
+            <a id=\"btnPrint\" class=\"btn btn-primary\" style=\"background-color: #D0A343; border-color: #D0A343;\" href=\"{{path('app_voyage_pdf')}}\"> Imprimer </a>
         
           </div>
         </div>
@@ -324,11 +323,7 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
 <!-- Assurez-vous d'inclure jQuery avant votre script -->
 <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
 
-<script>
-  document.getElementById('btnPrint').addEventListener('click', function() {
-    window.print();
-  });
-</script> 
+
 
 <script>
     \$(document).ready(function () {
@@ -341,6 +336,6 @@ class __TwigTemplate_3d8a969192fc650b3e52839069ee8b96 extends Template
     });
 </script>
 {% endblock %}
-", "voyage/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 2/templates/voyage/index.html.twig");
+", "voyage/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/voyage/index.html.twig");
     }
 }

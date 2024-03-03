@@ -15,6 +15,7 @@ return [
         '/test' => [[['_route' => 'app_test', '_controller' => 'App\\Controller\\TestController::show1'], null, ['GET' => 0], null, false, false, null]],
         '/voyage' => [[['_route' => 'app_voyage_index', '_controller' => 'App\\Controller\\VoyageController::index'], null, ['GET' => 0], null, true, false, null]],
         '/voyage/new' => [[['_route' => 'app_voyage_new', '_controller' => 'App\\Controller\\VoyageController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/voyagevoyage/pdf' => [[['_route' => 'app_voyage_pdf', '_controller' => 'App\\Controller\\VoyageController::pdf'], null, null, null, false, false, null]],
         '/voypersonalise' => [[['_route' => 'app_voypersonalise_index', '_controller' => 'App\\Controller\\VoypersonaliseController::index'], null, ['GET' => 0], null, true, false, null]],
         '/voypersonalise/new' => [[['_route' => 'app_voypersonalise_new', '_controller' => 'App\\Controller\\VoypersonaliseController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
@@ -41,18 +42,15 @@ return [
                     .'|(*:185)'
                 .')'
                 .'|/voy(?'
-                    .'|age/(?'
-                        .'|([^/]++)(?'
-                            .'|(*:219)'
-                            .'|/edit(*:232)'
-                            .'|(*:240)'
-                        .')'
-                        .'|pdf(*:252)'
+                    .'|age/([^/]++)(?'
+                        .'|(*:216)'
+                        .'|/edit(*:229)'
+                        .'|(*:237)'
                     .')'
                     .'|personalise/([^/]++)(?'
-                        .'|(*:284)'
-                        .'|/edit(*:297)'
-                        .'|(*:305)'
+                        .'|(*:269)'
+                        .'|/edit(*:282)'
+                        .'|(*:290)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -68,13 +66,12 @@ return [
         162 => [[['_route' => 'confirm_reservation', '_controller' => 'App\\Controller\\ResController::confirmReservation'], ['id'], ['GET' => 0], null, false, false, null]],
         175 => [[['_route' => 'cancel_reservation', '_controller' => 'App\\Controller\\ResController::cancelReservation'], ['id'], ['GET' => 0], null, false, false, null]],
         185 => [[['_route' => 'app_res_delete', '_controller' => 'App\\Controller\\ResController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        219 => [[['_route' => 'app_voyage_show', '_controller' => 'App\\Controller\\VoyageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        232 => [[['_route' => 'app_voyage_edit', '_controller' => 'App\\Controller\\VoyageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        240 => [[['_route' => 'app_voyage_delete', '_controller' => 'App\\Controller\\VoyageController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        252 => [[['_route' => 'app_voyage_pdf', '_controller' => 'App\\Controller\\VoyageController::pdf'], [], ['GET' => 0], null, false, false, null]],
-        284 => [[['_route' => 'app_voypersonalise_show', '_controller' => 'App\\Controller\\VoypersonaliseController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        297 => [[['_route' => 'app_voypersonalise_edit', '_controller' => 'App\\Controller\\VoypersonaliseController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        305 => [
+        216 => [[['_route' => 'app_voyage_show', '_controller' => 'App\\Controller\\VoyageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        229 => [[['_route' => 'app_voyage_edit', '_controller' => 'App\\Controller\\VoyageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        237 => [[['_route' => 'app_voyage_delete', '_controller' => 'App\\Controller\\VoyageController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        269 => [[['_route' => 'app_voypersonalise_show', '_controller' => 'App\\Controller\\VoypersonaliseController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        282 => [[['_route' => 'app_voypersonalise_edit', '_controller' => 'App\\Controller\\VoypersonaliseController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        290 => [
             [['_route' => 'app_voypersonalise_delete', '_controller' => 'App\\Controller\\VoypersonaliseController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

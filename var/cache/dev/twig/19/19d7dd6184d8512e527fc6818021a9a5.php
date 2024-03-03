@@ -96,6 +96,7 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
             <table id=\"myTable\" class=\"table\">
               <thead>
                 <tr>
+                 <th>Mail</th>
                   <th>Nombre de personnes</th>
                   <th>Origine</th>
                   <th>Age</th>
@@ -104,57 +105,61 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
               </thead>
               <tbody>
                 ";
-        // line 39
+        // line 40
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["res"]) || array_key_exists("res", $context) ? $context["res"] : (function () { throw new RuntimeError('Variable "res" does not exist.', 39, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["res"]) || array_key_exists("res", $context) ? $context["res"] : (function () { throw new RuntimeError('Variable "res" does not exist.', 40, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["re"]) {
-            // line 40
-            echo "                <tr>
-                  <td>";
             // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "nombre", [], "any", false, false, false, 41), "html", null, true);
-            echo "</td>
-                  <td>";
+            echo "                <tr>
+                 <td>";
             // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "origine", [], "any", false, false, false, 42), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "mail", [], "any", false, false, false, 42), "html", null, true);
             echo "</td>
                   <td>";
             // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "age", [], "any", false, false, false, 43), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "nombre", [], "any", false, false, false, 43), "html", null, true);
+            echo "</td>
+                  <td>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "origine", [], "any", false, false, false, 44), "html", null, true);
+            echo "</td>
+                  <td>";
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["re"], "age", [], "any", false, false, false, 45), "html", null, true);
             echo "</td>
                   <td>
                     <a href=\"";
-            // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_show", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_show", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 47)]), "html", null, true);
             echo "\" class=\"btn btn-primary\">Afficher</a>
                     <a href=\"";
-            // line 46
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 46)]), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 48)]), "html", null, true);
             echo "\" class=\"btn btn-secondary\">Modifier</a>
                     ";
-            // line 47
-            if ( !twig_get_attribute($this->env, $this->source, $context["re"], "confirmed", [], "any", false, false, false, 47)) {
-                // line 48
+            // line 49
+            if ( !twig_get_attribute($this->env, $this->source, $context["re"], "confirmed", [], "any", false, false, false, 49)) {
+                // line 50
                 echo "                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("confirm_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 48)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("confirm_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 50)]), "html", null, true);
                 echo "\" class=\"btn btn-success\">Confirmer</a>
                     ";
             } else {
-                // line 50
+                // line 52
                 echo "                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cancel_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cancel_reservation", ["id" => twig_get_attribute($this->env, $this->source, $context["re"], "id", [], "any", false, false, false, 52)]), "html", null, true);
                 echo "\" class=\"btn btn-danger\">Annuler</a>
                     ";
             }
-            // line 52
+            // line 54
             echo "                  </td>
                 </tr>
                 ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 55
+            // line 57
             echo "                <tr>
                   <td colspan=\"5\">Aucun enregistrement trouvé</td>
                 </tr>
@@ -163,7 +168,7 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['re'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 61
         echo "              </tbody>
             </table>
           </div>
@@ -217,7 +222,7 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  167 => 59,  158 => 55,  151 => 52,  145 => 50,  139 => 48,  137 => 47,  133 => 46,  129 => 45,  124 => 43,  120 => 42,  116 => 41,  113 => 40,  108 => 39,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  172 => 61,  163 => 57,  156 => 54,  150 => 52,  144 => 50,  142 => 49,  138 => 48,  134 => 47,  129 => 45,  125 => 44,  121 => 43,  117 => 42,  114 => 41,  109 => 40,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -253,6 +258,7 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
             <table id=\"myTable\" class=\"table\">
               <thead>
                 <tr>
+                 <th>Mail</th>
                   <th>Nombre de personnes</th>
                   <th>Origine</th>
                   <th>Age</th>
@@ -262,6 +268,7 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
               <tbody>
                 {% for re in res %}
                 <tr>
+                 <td>{{ re.mail }}</td>
                   <td>{{ re.nombre }}</td>
                   <td>{{ re.origine }}</td>
                   <td>{{ re.age }}</td>
@@ -307,6 +314,6 @@ class __TwigTemplate_39a4d28bbe96399b8871925a0ab0f1f7 extends Template
   });
 </script>
 {% endblock %}
-", "res/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 2/templates/res/index.html.twig");
+", "res/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/res/index.html.twig");
     }
 }

@@ -174,6 +174,6 @@ class __TwigTemplate_3ef43a57ab017381cd41ff760d589435 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

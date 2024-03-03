@@ -177,6 +177,6 @@ class __TwigTemplate_ac4340712f09229f1787ddabf3f6ef5c extends Template
     </ul>
   </nav>
 </div>
-", "sidebar.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/sidebar.html.twig");
+", "sidebar.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/sidebar.html.twig");
     }
 }

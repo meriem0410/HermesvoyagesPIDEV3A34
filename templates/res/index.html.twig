@@ -29,6 +29,7 @@
             <table id="myTable" class="table">
               <thead>
                 <tr>
+                 <th>Mail</th>
                   <th>Nombre de personnes</th>
                   <th>Origine</th>
                   <th>Age</th>
@@ -38,6 +39,7 @@
               <tbody>
                 {% for re in res %}
                 <tr>
+                 <td>{{ re.mail }}</td>
                   <td>{{ re.nombre }}</td>
                   <td>{{ re.origine }}</td>
                   <td>{{ re.age }}</td>

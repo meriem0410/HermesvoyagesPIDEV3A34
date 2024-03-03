@@ -15,6 +15,7 @@ class ResType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+        ->add('mail')
         ->add('nombre')
         ->add('origine')
         ->add('age')

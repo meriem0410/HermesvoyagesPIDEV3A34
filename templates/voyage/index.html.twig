@@ -61,7 +61,7 @@
             <a href="{{ path('app_voyage_new') }}" class="btn btn-success" style="background-color: #D0A343; border-color: #D0A343;">Créer un nouveau voyage</a>
 
             <!-- Bouton d'impression -->
-            <button id="btnPrint" class="btn btn-primary" style="background-color: #D0A343; border-color: #D0A343;"> Imprimer </button>
+            <a id="btnPrint" class="btn btn-primary" style="background-color: #D0A343; border-color: #D0A343;" href="{{path('app_voyage_pdf')}}"> Imprimer </a>
         
           </div>
         </div>
@@ -77,11 +77,7 @@
 <!-- Assurez-vous d'inclure jQuery avant votre script -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
-  document.getElementById('btnPrint').addEventListener('click', function() {
-    window.print();
-  });
-</script> 
+
 
 <script>
     $(document).ready(function () {

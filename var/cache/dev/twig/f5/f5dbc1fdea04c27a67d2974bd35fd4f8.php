@@ -82,6 +82,6 @@ class __TwigTemplate_aa727bca12ef8e59fdaadcc39c1cb289 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ voyage.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "voyage/_delete_form.html.twig", "/Users/meriemsayari/Downloads/HermesvoyagesPIDEV3A34-main/templates/voyage/_delete_form.html.twig");
+", "voyage/_delete_form.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/voyage/_delete_form.html.twig");
     }
 }
