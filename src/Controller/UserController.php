@@ -122,5 +122,29 @@ public function new(Request $request, EntityManagerInterface $entityManager, Use
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/{id}/ban', name: 'app_user_ban', methods: ['POST'])]
+    public function banUser(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('ban'.$user->getId(), $request->request->get('_token'))) {
+            $user->setIsBanned(true);
+            $entityManager->flush();
+            $this->addFlash('success', 'User banned successfully');
+        }
+
+        return $this->redirectToRoute('app_user_index');
+    }
+
+    #[Route('/{id}/unban', name: 'app_user_unban', methods: ['POST'])]
+    public function unbanUser(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('unban'.$user->getId(), $request->request->get('_token'))) {
+            $user->setIsBanned(false);
+            $entityManager->flush();
+            $this->addFlash('success', 'User unbanned successfully');
+        }
+
+        return $this->redirectToRoute('app_user_index');
+    }
     
 }

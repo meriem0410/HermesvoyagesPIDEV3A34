@@ -7,9 +7,7 @@
 {% endblock %}
 
 {% block body %}
-    {% if app.session.get('id') is defined and app.session.get('id') is not null %}
-        {{ include('status/index.html.twig') }}
-    {% else %}
+    
         <br>
         <br>
         <div class="cont">
@@ -52,5 +50,4 @@
                 document.querySelector('.cont').classList.toggle('s--signup');
             });
         </script>
-    {% endif %}
 {% endblock %}

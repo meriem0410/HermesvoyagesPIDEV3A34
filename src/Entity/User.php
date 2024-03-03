@@ -32,6 +32,9 @@ class User
     #[ORM\Column]
     private ?bool $Verified = null;
 
+    #[ORM\Column(type: 'boolean')]
+    private bool $isBanned = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -98,6 +101,17 @@ class User
     {
         $this->Verified = $Verified;
 
+        return $this;
+    }
+
+    public function getIsBanned(): bool
+    {
+        return $this->isBanned;
+    }
+
+    public function setIsBanned(bool $isBanned): self
+    {
+        $this->isBanned = $isBanned;
         return $this;
     }
 }

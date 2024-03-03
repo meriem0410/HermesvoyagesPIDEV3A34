@@ -1,6 +1,12 @@
 {% extends 'base_front.html.twig' %}
-
 {% block content %}
+{% if app.session.get('isBanned') == 1 %} 
+                <p>This account is banned.</p>
+                <form action="{{ path('app_logout') }}" method="post">
+                    <button type="submit">Disconnect</button>
+                </form>
+{% else %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,4 +55,5 @@
 
 </body>
 </html>
+{% endif %}
 {% endblock %}

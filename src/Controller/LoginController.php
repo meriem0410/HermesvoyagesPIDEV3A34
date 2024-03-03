@@ -54,7 +54,8 @@ class LoginController extends AbstractController
                 $session->set('username', $user->getUsername());
                 $session->set('email', $user->getEmail());
                 $session->set('role', $user->getRole());
-
+                $session->set('isBanned', $user->getIsBanned());
+                return $this->redirectToRoute('app_home');
                 return $this->render('status/index.html.twig');
             } else if ($user !== null && !($user->isVerified()) && password_verify($userFormData->getPassword(), $user->getPassword())) {
                 
@@ -109,11 +110,24 @@ class LoginController extends AbstractController
 
                  // Store user in session
                  $session->set('user', $user);  
-
-                return $this->redirectToRoute('login');
+                 $this->verificationCode = bin2hex(random_bytes(16));
+                 $session->set('verification_code', $this->verificationCode);
+                 $transport=Transport::fromDsn('smtp://piesprit91@gmail.com:etgrlloxvwswxyxz@smtp.gmail.com:587');
+                 // Create a new User object and set its properties
+                 $mailer = new Mailer($transport);
+                 $email=(new Email())
+                 ->from ('piesprit91@gmail.com')
+                 ->to($user->getEmail())
+                 //->to('azizrk19@gmail.com')
+                 ->subject('Email Verification')
+                 ->html($this->renderView('emails/signup.html.twig',['username' => $user->getUsername(),'verificationCode' =>  $this->verificationCode] // Replace 'John Doe' with the actual username
+             ));
+ 
+                 $mailer->send($email);
+                return $this->redirectToRoute('verify_code');
             }
         }
-        return $this->render('login/login.html.twig', [
+        return $this->render('login/login2.html.twig', [
             'formSignup' => $formSignup->createView(),
             'form' => $form->createView(),
         ]);
