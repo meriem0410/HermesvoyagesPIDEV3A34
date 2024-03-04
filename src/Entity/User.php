@@ -6,6 +6,8 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Enum\UserRoleEnum;
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User
@@ -16,25 +18,38 @@ class User
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $username = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $username = null;
+    private ?string $role = UserRoleEnum::VOYAGEUR;
 
-    #[ORM\ManyToMany(targetEntity: Hebergement::class, mappedBy: 'relation')]
-    private Collection $hebergements;
+    #[ORM\Column]
+    private ?bool $Verified = null;
 
-    public function __construct()
-    {
-        $this->hebergements = new ArrayCollection();
-    }
+    #[ORM\Column(type: 'boolean')]
+    private bool $isBanned = false;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): static
+    {
+        $this->username = $username;
+
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -61,42 +76,44 @@ class User
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getRole(): ?string
     {
-        return $this->username;
+        return $this->role;
     }
 
-    public function setUsername(string $username): static
+    public function setRole(string $role): self
     {
-        $this->username = $username;
+        if (!in_array($role, UserRoleEnum::getAllRoles(), true)) {
+            throw new \InvalidArgumentException("Invalid role");
+        }
+
+        $this->role = $role;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, Hebergement>
-     */
-    public function getHebergements(): Collection
+    public function isVerified(): ?bool
     {
-        return $this->hebergements;
+        return $this->Verified;
     }
 
-    public function addHebergement(Hebergement $hebergement): static
+    public function setVerified(bool $Verified): static
     {
-        if (!$this->hebergements->contains($hebergement)) {
-            $this->hebergements->add($hebergement);
-            $hebergement->addRelation($this);
-        }
+        $this->Verified = $Verified;
 
         return $this;
     }
 
-    public function removeHebergement(Hebergement $hebergement): static
+    public function getIsBanned(): bool
     {
-        if ($this->hebergements->removeElement($hebergement)) {
-            $hebergement->removeRelation($this);
-        }
+        return $this->isBanned;
+    }
 
+    public function setIsBanned(bool $isBanned): self
+    {
+        $this->isBanned = $isBanned;
         return $this;
     }
 }
+
+
