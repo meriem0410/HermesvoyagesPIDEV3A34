@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 #[Route('/front/tickets')]
 class TicketsFrontController extends AbstractController
@@ -31,7 +33,7 @@ class TicketsFrontController extends AbstractController
     }
 
     #[Route('/new', name: 'app_tickets_front_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager,MailerInterface  $mailer): Response
     {
         $ticket = new Tickets();
         $form = $this->createForm(Tickets1Type::class, $ticket);
@@ -43,6 +45,19 @@ class TicketsFrontController extends AbstractController
 
             return $this->redirectToRoute('app_tickets_front_index', [], Response::HTTP_SEE_OTHER);
         }
+
+     
+        $email = (new Email())
+            ->from('slimenachref01@gmail.com')
+            ->to('jridim64@gmail.com') // Replace with your Mailtrap inbox email or leave as your default to email
+            ->subject('Time for Symfony Mailer!')
+            ->text('Sending emails is fun again!')
+            ->html('<p>See Twig integration for better HTML integration!</p>');
+
+            $mailer->send($email);
+
+     
+    
 
         return $this->render('tickets_front/new.html.twig', [
             'ticket' => $ticket,
@@ -85,5 +100,20 @@ class TicketsFrontController extends AbstractController
         }
 
         return $this->redirectToRoute('app_tickets_front_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/test/mail', name: 'test_mail')]
+    public function tst(MailerInterface $mailer): Response
+    {
+        $email = (new Email())
+            ->from('slimenachref01@gmail.com')
+            ->to('smichimajed@gmail.com') // Replace with your Mailtrap inbox email or leave as your default to email
+            ->subject('Time for Symfony Mailer!')
+            ->text('Sending emails is fun again!')
+            ->html('<p>See Twig integration for better HTML integration!</p>');
+
+        $mailer->send($email);
+
+        return new Response('Email sent!');
     }
 }
