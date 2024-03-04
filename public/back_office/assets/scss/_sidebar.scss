@@ -2,7 +2,7 @@
 
 .sidebar {
   min-height: calc(100vh - #{$navbar-height});
-  background: #D0A343; 
+  background:#FBFCFA ; 
   font-family: $type1;
   padding: 0;
   width: $sidebar-width-lg;
@@ -98,7 +98,7 @@
             &:before {
               content: "\F415";
               font-size: 16px;
-              color: #D0A343;
+              color: #FEFCFA;
               opacity: 0.36;
             }
             + .menu-icon {
@@ -112,7 +112,7 @@
         }
 
         .menu-title {
-          color: #D0A343;
+          color: #FEFCFA;
           display: inline-block;
           font-size: $sidebar-menu-font-size;
           line-height: 1;

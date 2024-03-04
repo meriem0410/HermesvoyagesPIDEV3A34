@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\VoyageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: VoyageRepository::class)]
 class Voyage
@@ -15,19 +18,34 @@ class Voyage
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le champ destination ne peut pas être vide")]
+    #[Assert\Type(type: "string", message: "La destination doit être une chaîne de caractères")]
     private ?string $destination = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: "Le champ prix ne peut pas être vide")]
+    #[Assert\Type(type: "float", message: "Le prix doit être un nombre")]
     private ?float $prix = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\NotBlank(message: "Le champ date ne peut pas être vide")]
+    #[Assert\Type(type: "\DateTimeInterface", message: "La date doit être une date valide")]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
-    private array $type = [];
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le champ type ne peut pas être vide")]
+    #[Assert\Type(type: "string", message: "Le type doit être une chaîne de caractères")]
+    private ?string $type = null;
 
     #[ORM\OneToOne(mappedBy: 'voyage', cascade: ['persist', 'remove'])]
     private ?Programme $programme = null;
+    
+    #[ORM\OneToOne(mappedBy: 'pays')] 
+    private ?Res $res; 
+
+   
+
+ 
 
     public function getId(): ?int
     {
@@ -70,12 +88,12 @@ class Voyage
         return $this;
     }
 
-    public function getType(): array
+    public function getType(): ?string
     {
         return $this->type;
     }
 
-    public function setType(array $type): static
+    public function setType(string $type): static
     {
         $this->type = $type;
 
@@ -89,7 +107,6 @@ class Voyage
 
     public function setProgramme(Programme $programme): static
     {
-        // set the owning side of the relation if necessary
         if ($programme->getVoyage() !== $this) {
             $programme->setVoyage($this);
         }
@@ -98,4 +115,10 @@ class Voyage
 
         return $this;
     }
+
+   
+   
+    
+
+   
 }
