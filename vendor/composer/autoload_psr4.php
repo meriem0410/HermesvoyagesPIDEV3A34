@@ -64,6 +64,7 @@ return array(
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
+    'Imagine\\' => array($vendorDir . '/imagine/imagine/src'),
     'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Dompdf\\' => array($vendorDir . '/dompdf/dompdf/src'),

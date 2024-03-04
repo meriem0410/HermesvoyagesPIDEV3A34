@@ -151,7 +151,7 @@ class __TwigTemplate_e1a0a1919a68d2b3f03168f17de68033 extends Template
                                 </div>
                             </div>
                             <div class=\"col-md-6\">
-                                <div class=\"form-floating date\" id=\"date3\" data-target-input=\"nearest\">
+                                <div class=\"form-floating \" >
                                     ";
         // line 55
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 55, $this->source); })()), "date", [], "any", false, false, false, 55), 'widget', ["attr" => ["class" => "form-control bg-transparent datetimepicker-input", "placeholder" => "Date & Time", "data-target" => "#date3", "data-toggle" => "datetimepicker"]]);
@@ -185,6 +185,9 @@ class __TwigTemplate_e1a0a1919a68d2b3f03168f17de68033 extends Template
         // line 75
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 75, $this->source); })()), 'form_end');
         echo "
+
+                     
+
                     </div>
                 </div>
             </div>
@@ -198,37 +201,37 @@ class __TwigTemplate_e1a0a1919a68d2b3f03168f17de68033 extends Template
 <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
 <script src=\"";
-        // line 88
+        // line 91
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 89
+        // line 92
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 90
+        // line 93
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 91
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 92
+        // line 95
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 93
+        // line 96
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment-timezone.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 94
+        // line 97
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Template Javascript -->
 <script src=\"";
-        // line 97
+        // line 100
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/js/main.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -258,7 +261,7 @@ class __TwigTemplate_e1a0a1919a68d2b3f03168f17de68033 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  232 => 97,  226 => 94,  222 => 93,  218 => 92,  214 => 91,  210 => 90,  206 => 89,  202 => 88,  186 => 75,  175 => 67,  166 => 61,  157 => 55,  148 => 49,  139 => 43,  132 => 39,  125 => 35,  110 => 23,  104 => 20,  100 => 19,  96 => 18,  90 => 15,  86 => 14,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  235 => 100,  229 => 97,  225 => 96,  221 => 95,  217 => 94,  213 => 93,  209 => 92,  205 => 91,  186 => 75,  175 => 67,  166 => 61,  157 => 55,  148 => 49,  139 => 43,  132 => 39,  125 => 35,  110 => 23,  104 => 20,  100 => 19,  96 => 18,  90 => 15,  86 => 14,  77 => 8,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -316,7 +319,7 @@ class __TwigTemplate_e1a0a1919a68d2b3f03168f17de68033 extends Template
                                 </div>
                             </div>
                             <div class=\"col-md-6\">
-                                <div class=\"form-floating date\" id=\"date3\" data-target-input=\"nearest\">
+                                <div class=\"form-floating \" >
                                     {{ form_widget(form.date, {'attr': {'class': 'form-control bg-transparent datetimepicker-input', 'placeholder': 'Date & Time', 'data-target': '#date3', 'data-toggle': 'datetimepicker'}}) }}
                                     <label for=\"date\">Date & Time</label>
                                 </div>
@@ -338,6 +341,9 @@ class __TwigTemplate_e1a0a1919a68d2b3f03168f17de68033 extends Template
                             </div>
                         </div>
                         {{ form_end(form) }}
+
+                     
+
                     </div>
                 </div>
             </div>

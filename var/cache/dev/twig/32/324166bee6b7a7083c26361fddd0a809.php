@@ -134,7 +134,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                 <div class=\"col-lg-4 col-md-6 wow fadeInUp\" data-wow-delay=\"0.1s\">
                     <div class=\"package-item\">
                         <div class=\"overflow-hidden\">
-                         <img class=\"img-fluid\" src=\"";
+                         <img class=\"img-fluid image-clarifai\" src=\"";
             // line 42
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("/voyageorganisé/img/package-" . twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 42)) . ".jpg")), "html", null, true);
             echo "\"  alt=\"\">
@@ -153,12 +153,13 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
             echo "</small>
 
                            
-                           
+                          
+
                         </div>
                         <div class=\"text-center p-4\">
                             <h3 class=\"mb-0\">";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "prix", [], "any", false, false, false, 52), "html", null, true);
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "prix", [], "any", false, false, false, 53), "html", null, true);
             echo "DT</h3>
                             <div class=\"mb-3\">
                                 <small class=\"fa fa-star text-primary\"></small>
@@ -168,16 +169,16 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                                 <small class=\"fa fa-star text-primary\"></small>
                             </div>
                             <p> ";
-            // line 60
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 60), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voyage"], "destination", [], "any", false, false, false, 61), "html", null, true);
             echo " Avec une population diversifiée et accueillante, elle offre un mélange unique de cultures, de traditions et de styles de vie.</p>
                             <div class=\"d-flex justify-content-center mb-2\">
                           <a href=\"";
-            // line 62
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_prog", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 62)]), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_prog", ["id" => twig_get_attribute($this->env, $this->source, $context["voyage"], "id", [], "any", false, false, false, 63)]), "html", null, true);
             echo "\" class=\"btn btn-sm btn-primary px-3 border-end\" style=\"border-radius: 30px 0 0 30px;\">Voir plus</a>
                                 <a href=\"";
-            // line 63
+            // line 64
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_res_new");
             echo "\"class=\"btn btn-sm btn-primary px-3\" style=\"border-radius: 0 30px 30px 0;\">Reserver maintenant</a>
                             </div>
@@ -189,7 +190,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['voyage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 70
         echo "
     <!-- Package End -->
 
@@ -205,7 +206,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                         <h1 class=\"text-white mb-4\">Remplisser ce formulaire </h1>
                         <p class=\"mb-4\">Vous ne trouvez pas votre boneur parmis nos suggestion ? Decrivez nous votre voyages de rêve et il sera bientôt disponible ..</p>
                         <a class=\"btn btn-outline-light py-3 px-5 mt-2\" href=\"";
-        // line 83
+        // line 84
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voypersonalise_new");
         echo "\">Créer votre itinéraire</a>
                         </center>
@@ -238,41 +239,98 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
 <script src=\"";
-        // line 113
+        // line 114
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 114
+        // line 115
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/easing/easing.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 115
+        // line 116
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/waypoints/waypoints.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 116
+        // line 117
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 117
+        // line 118
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 118
+        // line 119
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/moment-timezone.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 119
+        // line 120
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"), "html", null, true);
         echo "\"></script>
 
 <!-- Template Javascript -->
 <script src=\"";
-        // line 122
+        // line 123
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("voyageorganisé/js/main.js"), "html", null, true);
         echo "\"></script>
+  <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 
- ";
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script>
+     \$(document).ready(function() {
+    // Fonction pour détecter les objets dans une image
+    function detecterObjets(urlImage) {
+        // Clé d'API de Clarifai
+        var apiKey = '2a63ec320dc849029024284d84924db4';
+        
+        // URL de l'API Clarifai pour la détection d'objets
+        var urlApi = 'https://api.clarifai.com/v2/models/general-v1.3/outputs';
+
+        // Paramètres de la requête AJAX
+        var data = {
+            inputs: [
+                {
+                    data: {
+                        image: {
+                            url: urlImage
+                        }
+                    }
+                }
+            ]
+        };
+
+        // Envoi de la requête AJAX à l'API Clarifai
+        \$.ajax({
+            url: urlApi,
+            type: 'POST',
+            headers: {
+                'Authorization': 'Key ' + apiKey,
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(data),
+            success: function(response) {
+                // Traitement des résultats de la détection d'objets
+                console.log(response);
+                // Affichage des résultats sur la page ou autre traitement
+            },
+            error: function(xhr, status, error) {
+                // Gestion des erreurs
+                console.error(error);
+            }
+        });
+    }
+
+    // Attacher la fonction de détection d'objets au clic sur le bouton
+    \$('#btnDetecterObjets').click(function() {
+        // Récupérer l'URL de l'image à partir de l'attribut data-src de l'image
+        var urlImage = \$('.image-clarifai').attr('src');
+        // Appeler la fonction de détection d'objets
+        detecterObjets(urlImage);
+    });
+    
+});
+
+    </script>
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -299,7 +357,7 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  272 => 122,  266 => 119,  262 => 118,  258 => 117,  254 => 116,  250 => 115,  246 => 114,  242 => 113,  209 => 83,  193 => 69,  181 => 63,  177 => 62,  172 => 60,  161 => 52,  152 => 46,  148 => 45,  144 => 44,  139 => 42,  133 => 38,  129 => 37,  118 => 29,  112 => 26,  106 => 23,  102 => 22,  98 => 21,  92 => 18,  88 => 17,  77 => 9,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
+        return array (  273 => 123,  267 => 120,  263 => 119,  259 => 118,  255 => 117,  251 => 116,  247 => 115,  243 => 114,  210 => 84,  194 => 70,  182 => 64,  178 => 63,  173 => 61,  162 => 53,  152 => 46,  148 => 45,  144 => 44,  139 => 42,  133 => 38,  129 => 37,  118 => 29,  112 => 26,  106 => 23,  102 => 22,  98 => 21,  92 => 18,  88 => 17,  77 => 9,  73 => 7,  66 => 6,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -345,14 +403,15 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
                 <div class=\"col-lg-4 col-md-6 wow fadeInUp\" data-wow-delay=\"0.1s\">
                     <div class=\"package-item\">
                         <div class=\"overflow-hidden\">
-                         <img class=\"img-fluid\" src=\"{{ asset('/voyageorganisé/img/package-' ~ voyage.id ~ '.jpg') }}\"  alt=\"\">
+                         <img class=\"img-fluid image-clarifai\" src=\"{{ asset('/voyageorganisé/img/package-' ~ voyage.id ~ '.jpg') }}\"  alt=\"\">
                         </div>
                         <div class=\"d-flex border-bottom\"><small class=\"flex-fill text-center border-end py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #94BDB5;\"><i class=\"fa fa-map-marker-alt text-primary me-2\"></i>{{ voyage.destination }}</small>
 <small class=\"flex-fill text-center border-end py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #4F818C;\"><i class=\"fa fa-calendar-alt text-primary me-2\"></i>{{ voyage.date ? voyage.date|date('Y-m-d') : '' }}</small>
 <small class=\"flex-fill text-center py-2\" style=\"font-size: 2.2em; font-weight: bold; color: #D0A343;\"><i class=\"fa fa-user text-primary me-2\"></i>{{ voyage.type }}</small>
 
                            
-                           
+                          
+
                         </div>
                         <div class=\"text-center p-4\">
                             <h3 class=\"mb-0\">{{voyage.prix}}DT</h3>
@@ -426,7 +485,66 @@ class __TwigTemplate_ca6a01396f0499b9ec550b3f438bc34a extends Template
 
 <!-- Template Javascript -->
 <script src=\"{{ asset('voyageorganisé/js/main.js') }}\"></script>
+  <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 
- {% endblock %}", "test/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/test/index.html.twig");
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+    <script>
+     \$(document).ready(function() {
+    // Fonction pour détecter les objets dans une image
+    function detecterObjets(urlImage) {
+        // Clé d'API de Clarifai
+        var apiKey = '2a63ec320dc849029024284d84924db4';
+        
+        // URL de l'API Clarifai pour la détection d'objets
+        var urlApi = 'https://api.clarifai.com/v2/models/general-v1.3/outputs';
+
+        // Paramètres de la requête AJAX
+        var data = {
+            inputs: [
+                {
+                    data: {
+                        image: {
+                            url: urlImage
+                        }
+                    }
+                }
+            ]
+        };
+
+        // Envoi de la requête AJAX à l'API Clarifai
+        \$.ajax({
+            url: urlApi,
+            type: 'POST',
+            headers: {
+                'Authorization': 'Key ' + apiKey,
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(data),
+            success: function(response) {
+                // Traitement des résultats de la détection d'objets
+                console.log(response);
+                // Affichage des résultats sur la page ou autre traitement
+            },
+            error: function(xhr, status, error) {
+                // Gestion des erreurs
+                console.error(error);
+            }
+        });
+    }
+
+    // Attacher la fonction de détection d'objets au clic sur le bouton
+    \$('#btnDetecterObjets').click(function() {
+        // Récupérer l'URL de l'image à partir de l'attribut data-src de l'image
+        var urlImage = \$('.image-clarifai').attr('src');
+        // Appeler la fonction de détection d'objets
+        detecterObjets(urlImage);
+    });
+    
+});
+
+    </script>
+{% endblock %}
+
+", "test/index.html.twig", "/Users/meriemsayari/Desktop/HermesvoyagesPIDEV3A34-main copie 3/templates/test/index.html.twig");
     }
 }

@@ -89,6 +89,10 @@ class ComposerStaticInit4acc6d5903cd641fee195e32c4d1afe6
         array (
             'Masterminds\\' => 12,
         ),
+        'I' => 
+        array (
+            'Imagine\\' => 8,
+        ),
         'F' => 
         array (
             'FontLib\\' => 8,
@@ -354,6 +358,10 @@ class ComposerStaticInit4acc6d5903cd641fee195e32c4d1afe6
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'Imagine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/imagine/imagine/src',
         ),
         'FontLib\\' => 
         array (

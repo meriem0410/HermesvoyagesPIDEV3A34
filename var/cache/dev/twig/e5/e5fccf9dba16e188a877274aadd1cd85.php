@@ -97,7 +97,7 @@ class __TwigTemplate_8ff1d9540f84679831990cf69bab7707 extends Template
             <table class=\"table\">
               <thead>
                 <tr>
-                  <th>Id</th>
+                 
                   <th>Destination</th>
                   <th>Saison</th>
                   <th>Date</th>
@@ -115,10 +115,7 @@ class __TwigTemplate_8ff1d9540f84679831990cf69bab7707 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["voypersonalise"]) {
             // line 44
             echo "                <tr>
-                  <td>";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voypersonalise"], "id", [], "any", false, false, false, 45), "html", null, true);
-            echo "</td>
+                 
                   <td>";
             // line 46
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voypersonalise"], "destination", [], "any", false, false, false, 46), "html", null, true);
@@ -142,7 +139,7 @@ class __TwigTemplate_8ff1d9540f84679831990cf69bab7707 extends Template
                   <td>
                     <a href=\"";
             // line 52
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voypersonalise_show", ["id" => twig_get_attribute($this->env, $this->source, $context["voypersonalise"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voypersonalise");
             echo "\" class=\"btn btn-info\" style=\"background-color: #D0A343; border-color: #D0A343;\">Afficher</a>
                    
                   </td>
@@ -212,7 +209,7 @@ class __TwigTemplate_8ff1d9540f84679831990cf69bab7707 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  164 => 61,  155 => 57,  145 => 52,  140 => 50,  136 => 49,  132 => 48,  128 => 47,  124 => 46,  120 => 45,  117 => 44,  112 => 43,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  161 => 61,  152 => 57,  142 => 52,  137 => 50,  133 => 49,  129 => 48,  125 => 47,  121 => 46,  117 => 44,  112 => 43,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -249,7 +246,7 @@ class __TwigTemplate_8ff1d9540f84679831990cf69bab7707 extends Template
             <table class=\"table\">
               <thead>
                 <tr>
-                  <th>Id</th>
+                 
                   <th>Destination</th>
                   <th>Saison</th>
                   <th>Date</th>
@@ -261,14 +258,14 @@ class __TwigTemplate_8ff1d9540f84679831990cf69bab7707 extends Template
               <tbody id=\"myTable\">
                 {% for voypersonalise in voypersonalises %}
                 <tr>
-                  <td>{{ voypersonalise.id }}</td>
+                 
                   <td>{{ voypersonalise.destination }}</td>
                   <td>{{ voypersonalise.saison }}</td>
                   <td>{{ voypersonalise.date ? voypersonalise.date|date('Y-m-d') : '' }}</td>
                   <td>{{ voypersonalise.email }}</td>
                   <td>{{ voypersonalise.act }}</td>
                   <td>
-                    <a href=\"{{ path('app_voypersonalise_show', {'id': voypersonalise.id}) }}\" class=\"btn btn-info\" style=\"background-color: #D0A343; border-color: #D0A343;\">Afficher</a>
+                    <a href=\"{{ path('app_voypersonalise')}}\" class=\"btn btn-info\" style=\"background-color: #D0A343; border-color: #D0A343;\">Afficher</a>
                    
                   </td>
                 </tr>

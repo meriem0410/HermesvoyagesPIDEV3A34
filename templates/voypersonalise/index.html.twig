@@ -30,7 +30,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>Id</th>
+                 
                   <th>Destination</th>
                   <th>Saison</th>
                   <th>Date</th>
@@ -42,14 +42,14 @@
               <tbody id="myTable">
                 {% for voypersonalise in voypersonalises %}
                 <tr>
-                  <td>{{ voypersonalise.id }}</td>
+                 
                   <td>{{ voypersonalise.destination }}</td>
                   <td>{{ voypersonalise.saison }}</td>
                   <td>{{ voypersonalise.date ? voypersonalise.date|date('Y-m-d') : '' }}</td>
                   <td>{{ voypersonalise.email }}</td>
                   <td>{{ voypersonalise.act }}</td>
                   <td>
-                    <a href="{{ path('app_voypersonalise_show', {'id': voypersonalise.id}) }}" class="btn btn-info" style="background-color: #D0A343; border-color: #D0A343;">Afficher</a>
+                    <a href="{{ path('app_voypersonalise')}}" class="btn btn-info" style="background-color: #D0A343; border-color: #D0A343;">Afficher</a>
                    
                   </td>
                 </tr>

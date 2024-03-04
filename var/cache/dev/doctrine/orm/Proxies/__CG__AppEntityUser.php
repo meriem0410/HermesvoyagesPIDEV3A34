@@ -20,13 +20,11 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\InternalProxy
         "\0".parent::class."\0".'hebergements' => [parent::class, 'hebergements', null],
         "\0".parent::class."\0".'id' => [parent::class, 'id', null],
         "\0".parent::class."\0".'password' => [parent::class, 'password', null],
-        "\0".parent::class."\0".'res' => [parent::class, 'res', null],
         "\0".parent::class."\0".'username' => [parent::class, 'username', null],
         'email' => [parent::class, 'email', null],
         'hebergements' => [parent::class, 'hebergements', null],
         'id' => [parent::class, 'id', null],
         'password' => [parent::class, 'password', null],
-        'res' => [parent::class, 'res', null],
         'username' => [parent::class, 'username', null],
     ];
 
