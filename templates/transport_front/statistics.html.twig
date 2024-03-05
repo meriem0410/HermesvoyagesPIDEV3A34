@@ -1,0 +1,104 @@
+{% extends 'base_front.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Statistiques des tickets par type de transport</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Type de transport</th>
+                    <th>Nombre de tickets</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in statistics %}
+                    <tr>
+                        <td>{{ stat.type }}</td>
+                        <td>{{ stat.ticketCount }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <canvas id="myChart" width="400" height="400"></canvas>
+
+        <a href="{{ path('app_transport_front_index') }}" class="btn btn-warning btn-sm btn-back">Retour à la liste</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const data = {
+                labels: [{% for stat in statistics %}'{{ stat.type }}',{% endfor %}],
+                datasets: [{
+                    label: 'Nombre de tickets par type de transport',
+                    data: [{% for stat in statistics %}{{ stat.ticketCount }},{% endfor %}],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            };
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    plugins: {
+                        subtitle: {
+                            display: true,
+                            text: 'Statistiques des tickets par type de transport',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}
